@@ -263,7 +263,7 @@
      "category": "Button",
      "subcategory": "Core",
      "variable": "$btn-font-weight",
-     "type": "font-weight",
+     "type": "attribute",
      "value": "normal"
    },
    {

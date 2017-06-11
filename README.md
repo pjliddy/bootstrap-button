@@ -1,100 +1,149 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Bootstrap Button Theme
 
-# ember-template
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-A template for starting projects with Ember as a client. Build pipeline and
-development server provided by `ember-cli`. Bootstrap and Sass included.
+## Project Links
 
-## Updating Dependencies
+- Client GitHub Repository: https://github.com/pjliddy/bootstrap-button-client/
+- Client Deployed: https://pjliddy.github.io/bootstrap-button-client/
+- API GitHub Repository: https://github.com/pjliddy/bootstrap-button-server/
+- API Deployed: https://bootstrap-button.herokuapp.com/
 
-At the beginning of each cohort update [`package.json`](package.json):
-### npm
--   replace all dependent package versions in `package.json` with a glob (`*`).
--   `rm -r node_modules`.
--   `npm update --save`.
--   `npm update --save-dev`.
--   `npm install`
+## User Stories
 
-### bower
-Currently bower [cannot automatically save updated versions](https://github.com/bower/bower/issues/2348) to `bower.json`.
+### Authenication
 
--   `rm -r bower_components`
--   `bower update`
--   `bower list`
--   Take the new version numbers from the top level of the list and paste
-    them into `bower.json`
--   `bower install`
--   `ember test`
+- **Sign Up:** As a new user, I want to sign up so I can be an authenticated user and user the application. (CREATE)
+  - User loads application.
+  - User clicks `sign up`.
+  - Application displays sign up form.
+  - User enters `email`, `password`, and `confirm-password`.
+  - Application checks that form input is valid.
+  - Applicaiton authenticates user.
+  - Application displays start screen.
 
-Fix errors and conflicts as necessary.
 
-## Dependencies
+- **Sign In:** As an unauthenticated user, I want to sign in so I can access my account. (READ)
+  - User loads application
+  - User clicks `sign in`.
+  - Application displays sign in form.
+  - User enters `email` and `password`.
+  - Application checks that form input is valid.
+  - Applicaiton authenticates user.
+  - Application displays start screen.
 
-Install build dependencies with `npm install`. Install runtime dependencies with
-`bower install`.
-If you have not installed phantomjs, you will need to install it globally:
-`npm install --global phantomjs-prebuil`
 
--   [ember.js](http://emberjs.com/)
--   [ember-cli](http://www.ember-cli.com/)
--   [Bootstrap](http://getbootstrap.com)
+- **Change Password:** As an authenticated user, I want to change my password so my account is secure. (UPDATE)
+  - User clicks on `change password`.
+  - Applicaiton displays change password form.
+  - User enters `current-password`, `new-password`, and `confirm-password`.
+  - Application checks that form input is valid.
+  - Application saves new password to database.
+  - Application displays confirmation message: `Your password has been changed`
 
-At the beginning of each cohort, update this template by upgrading `ember-cli`
-and generating a new Ember application in another location. Copy files over a
-handful at a time and check diffs. You should preserve the pods structure and
-other customizations, including Bootstrap.
 
-## Installation
+- **Sign Out:** As an authenticated user, I want to sign out so my account is secure when I am not using the application (DESTROY)
+  - User clicks on `sign out`.
+  - Application sends request to server
+  - Application receives response
+  - Application removes current user from `store`
+  - Application clears working theme and content view.
+  - Application return to public (non-authenticated) view
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Move into the new project and `git init`.
-1.  Replace all instances of `'bootstrap-button'` with your app name. This
-    includes [`package.json`](package.json), [`bower.json`](bower.json),
-    [`app/index.html`](app/index.html), [`tests/index.html`](tests/index.html),
-    and [`config/environment.js`](config/environment.js), possibly others.
-1.  Install dependencies with `npm install` and `bower install`.
-1.  Run the development server with `ember server`. Use the `--proxy` flag to
-    avoid writing development-specific CORS and CSP settings.
 
-## Structure
+### Theme Editing
+- **Create New Theme:** As an authenticated user, I want to begin a new theme so that I can customize it. (CREATE)
+  - User clicks `new theme`
+  - User specifies name for new theme and clicks `create`
+  - Application loads values of Bootstrap theme from the database
+  - Applicaion saves new theme with default values
 
-Build dependencies are stored in [`package.json`](package.json). Client
-dependencies are stored in [`bower.json`](bower.json).
 
-Do not configure `grunt` packages directly in the
-[`Gruntfile.js`](Gruntfile.js). Instead, store configurations in the
-[`grunt`](grunt) directory. You won't need a top-level key, since that's
-generated by the `Gruntfile.js` based on the filename of the configuration
-object stored in the `grunt` directory.
+- **Load Theme:** As an authenticated user, I want to load in a saved theme so I can further customize it. (READ)
+  - User views list of saved themes
+  - User clicks `load` button next to one of their saved themes
+  - Application loads values of saved theme from the database
+  - Application updates SCSS variables with new values and re-compiles CSS from SASS.
+  - Application updates display with new compiled styles.
 
-Developers should store source code following Ember conventions. This template
-uses the "pods" layout for organizing code. For an introduction, see [Organize
-Your Ember App with Pods](http://cball.me/organize-your-ember-app-with-pods/).
 
-## Tasks
+- **Update Theme Variables:** As an authenticated user, I want to edit and save the values of theme variables so that I use it later. (UPDATE)
+  - User changes the value of one of the theme variables in the current theme and presses `enter` or generates `blur` event on variable field.
+  - Application updates SCSS variable with new value and re-compiles CSS from SASS.
+  - Applicaiton saves the new value of the variable to the database.
 
-Developers should run these often!
 
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt reformat`: reformats all your code in a standard style
--   `ember server`: generates bundles, watches, and livereloads (use the
-    `--proxy` flag when developing locally)
--   `ember test`: runs any automated tests
--   `ember build`: prepare a distribution for deployment (use the
-    `--environment` flag if you've customized builds)
--   `ember generate`: make use of the many generators for code (try `ember help
-    generate` for more details)
+- **Delete Theme:** As an authenticated user, I want to delete a custom theme because it no longer will be used. (DESTROY)
+  - User views list of saved themes
+  - User clicks `delete` button next to one of their saved themes
+  - Application displays a modal, prompting user `are you sure?`
+  - User clicks `confirm`
+  - Application deletes selected theme from database and refreshes view
 
-## Additional Resources
 
--   [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
--   [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+- **Export Theme:** As a user who has completed a custom theme, I want to export a custom variables SCSS file so that I can use it in my application.
+  - User clicks `export` in the current theme view
+  - Application generates a SCSS `variables` file
+  - Application displays the `variables` file so the user can save it to their project
 
-## [License](LICENSE)
 
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+## Data Model
+
+### Theme Object
+
+Each theme object is composed of name-value pairs for:
+
+- `_id`: unique ID auto-generated by Mongoose/MongoDB
+- `name`: user-generated name for the theme. _"default"_ is the name for a Bootstrap theme with default values for each variable.
+- `vars`: an array of theme variable objects. Each theme variable object has five properties:
+  - `category`: the top level category for organizing and displaying variables. Categories for the button-specific variables are: Core, Geometry, Type, and Button
+  - `subcategory`: each category is broken down into 2-8 subcategories to allow for hierarchical display
+  - `variable`: the Bootstrap SASS variable name (including the `$` prefix)
+  - `type`: the type of variable. Each variable type will have a specific UI and validation. Types include:
+    - `color`: hex value for MVP; ideally, include rgb and rgba formats as well
+    - `attribute`: a list of preset attributes for certain CSS values (cursor, font-weight, link-hover-decoration)
+    - `font-family`: a list of font families; could be an attribute list or leverage Google Fonts API to display list of available fonts and access them(?)
+    - `line-height`: a floating point value without units used for type styles
+    - `size`: a number with units (px, em, %)
+  - `value`: the literal value used by SASS. Values can be:
+    - **_value_**: actual CSS value _("#ffffff" or "16px")_
+    - **_variable_**: another SASS variable _("$font-family-base")_
+    - **_function_**: a SASS function _("darken(#428bca, 6.5%)")_
+
+```json
+{
+  "_id": "XXXX",
+  "name": "default",
+  "vars":
+  [
+   {
+     "category": "Core",
+     "subcategory": "Brand Colors",
+     "variable": "$brand-primary",
+     "type": "color",
+     "value": "darken(#428bca, 6.5%)"
+   },
+   {
+     "category": "Geometry",
+     "subcategory": "Border Radius",
+     "variable": "$border-radius-base",
+     "type": "size",
+     "value": "4px"
+   },
+   {
+     "category": "Type",
+     "subcategory": "Font Family",
+     "variable": "$font-family-sans-serif",
+     "type": "font-family",
+     "value": "\"Helvetica Neue\", Helvetica, Arial, sans-serif"
+   },
+   {
+     "category": "Button",
+     "subcategory": "Core",
+     "variable": "$btn-font-weight",
+     "type": "attribute",
+     "value": "normal"
+   }
+ ]
+}
+```
