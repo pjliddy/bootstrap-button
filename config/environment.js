@@ -25,12 +25,12 @@ module.exports = function (environment) {
     },
     googleFonts: [
       'Roboto:300,400,500,700'
-    ]
+    ],
     // Set or update content security policies
-    // contentSecurityPolicy: {
-    //   'font-src': "'self' fonts.gstatic.com",
-    //   'style-src': "'self' fonts.googleapis.com"
-    // }
+    contentSecurityPolicy: {
+      'font-src': "'self' fonts.gstatic.com",
+      'style-src': "'self' fonts.googleapis.com"
+    }
   };
 
   if (environment === 'development') {

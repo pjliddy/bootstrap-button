@@ -105,83 +105,6 @@
    "value": "not-allowed"
  },
  {
-   "category": "Type",
-   "subcategory": "Font Family",
-   "variable": "$font-family-base",
-   "type": "font-family",
-   "value": "$font-family-sans-serif"
- },
- {
-   "category": "Type",
-   "subcategory": "Font Family",
-   "variable": "$font-family-sans-serif",
-   "type": "font-family",
-   "value": "\"Helvetica Neue\", Helvetica, Arial, sans-serif"
- },
- {
-   "category": "Type",
-   "subcategory": "Font Family",
-   "variable": "$font-family-serif",
-   "type": "font-family",
-   "value": "Georgia, \"Times New Roman\", Times, serif"
- },
- {
-   "category": "Type",
-   "subcategory": "Font Family",
-   "variable": "$font-family-monospace",
-   "type": "font-family",
-   "value": "Menlo, Monaco, Consolas, \"Courier New\", monospace"
- },
- {
-   "category": "Type",
-   "subcategory": "Font Size",
-   "variable": "$font-size-base",
-   "type": "size",
-   "value": "14px"
- },
- {
-   "category": "Type",
-   "subcategory": "Font Size",
-   "variable": "$font-size-large",
-   "type": "size",
-   "value": "ceil(($font-size-base * 1.25))"
- },
- {
-   "category": "Type",
-   "subcategory": "Font Size",
-   "variable": "$font-size-small",
-   "type": "size",
-   "value": "ceil(($font-size-base * 0.85))"
- },
- {
-   "category": "Type",
-   "subcategory": "Line Height",
-   "variable": "$line-height-base",
-   "type": "line-height",
-   "value": "1.428571429"
- },
- {
-   "category": "Type",
-   "subcategory": "Line Height",
-   "variable": "$line-height-computed",
-   "type": "line-height",
-   "value": "floor(($font-size-base * $line-height-base))"
- },
- {
-   "category": "Type",
-   "subcategory": "Line Height",
-   "variable": "$line-height-large",
-   "type": "line-height",
-   "value": "1.3333333"
- },
- {
-   "category": "Type",
-   "subcategory": "Line Height",
-   "variable": "$line-height-small",
-   "type": "line-height",
-   "value": "1.5"
- },
- {
    "category": "Geometry",
    "subcategory": "Border Radius",
    "variable": "$border-radius-base",
@@ -257,6 +180,83 @@
    "variable": "$padding-xs-vertical",
    "type": "size",
    "value": "1px"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Font Family",
+   "variable": "$font-family-base",
+   "type": "font-family",
+   "value": "$font-family-sans-serif"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Font Family",
+   "variable": "$font-family-sans-serif",
+   "type": "font-family",
+   "value": "\"Helvetica Neue\", Helvetica, Arial, sans-serif"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Font Family",
+   "variable": "$font-family-serif",
+   "type": "font-family",
+   "value": "Georgia, \"Times New Roman\", Times, serif"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Font Family",
+   "variable": "$font-family-monospace",
+   "type": "font-family",
+   "value": "Menlo, Monaco, Consolas, \"Courier New\", monospace"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Font Size",
+   "variable": "$font-size-base",
+   "type": "size",
+   "value": "14px"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Font Size",
+   "variable": "$font-size-large",
+   "type": "size",
+   "value": "ceil(($font-size-base * 1.25))"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Font Size",
+   "variable": "$font-size-small",
+   "type": "size",
+   "value": "ceil(($font-size-base * 0.85))"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Line Height",
+   "variable": "$line-height-base",
+   "type": "line-height",
+   "value": "1.428571429"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Line Height",
+   "variable": "$line-height-computed",
+   "type": "line-height",
+   "value": "floor(($font-size-base * $line-height-base))"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Line Height",
+   "variable": "$line-height-large",
+   "type": "line-height",
+   "value": "1.3333333"
+ },
+ {
+   "category": "Type",
+   "subcategory": "Line Height",
+   "variable": "$line-height-small",
+   "type": "line-height",
+   "value": "1.5"
  },
  {
    "category": "Button",
