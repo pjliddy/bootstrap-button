@@ -5,16 +5,24 @@
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
         {{#if isAuthenticated}}
-        <li>{{#link-to "users"}}Users{{/link-to}}</li>
+          <li>
+            {{#link-to "users"}}Users{{/link-to}}
+          </li>
         {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{#if isAuthenticated}}
-        <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
-        <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
+          <li>
+            {{#link-to "change-password"}}Change Password{{/link-to}}
+          </li>
+          <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
         {{else}}
-        <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
-        <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
+          <li>
+            {{#link-to "sign-up"}}Sign Up{{/link-to}}
+          </li>
+          <li>
+            {{#link-to "sign-in"}}Sign In{{/link-to}}
+          </li>
         {{/if}}
       </ul>
     </div>
@@ -29,33 +37,35 @@
 
 <div class="col-sm-12">
   {{outlet}}
-  <h3>Default Button</h3>
-  <div class="btn-toolbar">
-    <button class="btn btn-default">Default Button</button>
-  </div>
+  <div class="bt">
+    <h3>Default Button</h3>
+    <div class="btn-toolbar">
+      <button class="btn btn-default">Default Button</button>
+    </div>
 
-  <h3>Button Sizes</h3>
-  <div class="btn-toolbar">
-    <button class="btn btn-xs btn-default">Xtra Small Button</button>
-    <button class="btn btn-sm btn-default">Small Button</button>
-    <button class="btn btn-default">Normal Button</button>
-    <button class="btn btn-lg btn-default">Large Button</button>
-  </div>
+    <h3>Button Sizes</h3>
+    <div class="btn-toolbar">
+      <button class="btn btn-xs btn-default">Xtra Small Button</button>
+      <button class="btn btn-sm btn-default">Small Button</button>
+      <button class="btn btn-default">Normal Button</button>
+      <button class="btn btn-lg btn-default">Large Button</button>
+    </div>
 
-  <h3>Button Classes</h3>
-  <div class="btn-toolbar">
-    <button class="btn btn-primary">Primary Button</button>
-    <button class="btn btn-info">Info Button</button>
-    <button class="btn btn-success">Success Button</button>
-    <button class="btn btn-warning">Warning Button</button>
-    <button class="btn btn-danger">Danger Button</button>
-  </div>
+    <h3>Button Classes</h3>
+    <div class="btn-toolbar">
+      <button class="btn btn-primary">Primary Button</button>
+      <button class="btn btn-info">Info Button</button>
+      <button class="btn btn-success">Success Button</button>
+      <button class="btn btn-warning">Warning Button</button>
+      <button class="btn btn-danger">Danger Button</button>
+    </div>
 
-  <h3>Links</h3>
-  <div class="btn-toolbar">
-    <button class="btn btn-link">Link</button>
-    <button class="btn btn-link btn-link-hover">Link (Hover)</button>
-    <button class="btn btn-link btn-link-active">Link (Active)</button>
-    <button class="btn btn-link" disabled>Link (Disabled)</button>
+    <h3>Links</h3>
+    <div class="btn-toolbar">
+      <button class="btn btn-link">Link</button>
+      <button class="btn btn-link btn-link-hover">Link (Hover)</button>
+      <button class="btn btn-link btn-link-active">Link (Active)</button>
+      <button class="btn btn-link" disabled>Link (Disabled)</button>
+    </div>
   </div>
 </div>
