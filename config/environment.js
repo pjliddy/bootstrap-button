@@ -3,7 +3,7 @@
 module.exports = function (environment) {
   'use strict';
   const ENV = {
-    modulePrefix: 'capstone-client',
+    modulePrefix: 'bootstrap-button',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
@@ -54,11 +54,11 @@ module.exports = function (environment) {
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    ENV.APP.rootElement = '#capstone-client';
+    ENV.APP.rootElement = '#bootstrap-button';
   }
 
     if (environment === 'production') {
-    ENV.rootURL = '/capstone-client';
+    ENV.rootURL = '/bootstrap-button';
     ENV.locationType = 'hash';
     ENV.apiHost = '<% replace with the URL to your deployed API %>';
   }
