@@ -1,0 +1,61 @@
+category,subcategory,variable,type,value
+Core,Brand Colors,$brand-primary,color,"darken(#428bca, 6.5%)"
+Core,Brand Colors,$brand-info,color,#5bc0de
+Core,Brand Colors,$brand-success,color,#5cb85c
+Core,Brand Colors,$brand-warning,color,#f0ad4e
+Core,Brand Colors,$brand-danger,color,#d9534f
+Core,Grays,$gray-base,color,#000
+Core,Grays,$gray-darker,color,"lighten($gray-base, 13.5%)"
+Core,Grays,$gray-dark,color,"lighten($gray-base, 20%)"
+Core,Grays,$gray,color,"lighten($gray-base, 33.5%)"
+Core,Grays,$gray-light,color,"lighten($gray-base, 46.7%)"
+Core,Grays,$gray-lighter,color,"lighten($gray-base, 93.5%)"
+Core,Links,$link-color,color,$brand-primary
+Core,Links,$link-hover-color,color,"darken($link-color, 15%)"
+Core,Links,$link-hover-decoration,attribute,underline
+Core,Cursor,$cursor-disabled,attribute,not-allowed
+Type,Font Family,$font-family-base,font-family,$font-family-sans-serif
+Type,Font Family,$font-family-sans-serif,font-family,"""Helvetica Neue"", Helvetica, Arial, sans-serif"
+Type,Font Family,$font-family-serif,font-family,"Georgia, ""Times New Roman"", Times, serif"
+Type,Font Family,$font-family-monospace,font-family,"Menlo, Monaco, Consolas, ""Courier New"", monospace"
+Type,Font Size,$font-size-base,size,14px
+Type,Font Size,$font-size-large,size,ceil(($font-size-base * 1.25))
+Type,Font Size,$font-size-small,size,ceil(($font-size-base * 0.85))
+Type,Line Height,$line-height-base,line-height,1.428571429
+Type,Line Height,$line-height-computed,line-height,floor(($font-size-base * $line-height-base))
+Type,Line Height,$line-height-large,line-height,1.3333333
+Type,Line Height,$line-height-small,line-height,1.5
+Geometry,Border Radius,$border-radius-base,size,4px
+Geometry,Border Radius,$border-radius-large,size,6px
+Geometry,Border Radius,$border-radius-small,size,3px
+Geometry,Padding,$padding-base-horizontal,size,12px
+Geometry,Padding,$padding-base-vertical,size,6px
+Geometry,Padding,$padding-large-horizontal,size,16px
+Geometry,Padding,$padding-large-vertical,size,10px
+Geometry,Padding,$padding-small-horizontal,size,10px
+Geometry,Padding,$padding-small-vertical,size,5px
+Geometry,Padding,$padding-xs-horizontal,size,5px
+Geometry,Padding,$padding-xs-vertical,size,1px
+Button,Core,$btn-font-weight,font-weight,normal
+Button,Core,$btn-link-disabled-color,color,$gray-light
+Button,Border Radius,$btn-border-radius-base,size,$border-radius-base
+Button,Border Radius,$btn-border-radius-large,size,$border-radius-large
+Button,Border Radius,$btn-border-radius-small,size,$border-radius-small
+Button,Default Button,$btn-default-bg,color,#fff
+Button,Default Button,$btn-default-border,color,#ccc
+Button,Default Button,$btn-default-color,color,#333
+Button,Primary Button,$btn-primary-bg,color,$brand-primary
+Button,Primary Button,$btn-primary-border,color,"darken($btn-primary-bg, 5%)"
+Button,Primary Button,$btn-primary-color,color,#fff
+Button,Info Button,$btn-info-bg,color,$brand-info
+Button,Info Button,$btn-info-border,color,"darken($btn-info-bg, 5%)"
+Button,Info Button,$btn-info-color,color,#fff
+Button,Success Button,$btn-success-bg,color,$brand-success
+Button,Success Button,$btn-success-border,color,"darken($btn-success-bg, 5%)"
+Button,Success Button,$btn-success-color,color,#fff
+Button,Warning Button,$btn-warning-bg,color,$brand-warning
+Button,Warning Button,$btn-warning-border,color,"darken($btn-warning-bg, 5%)"
+Button,Warning Button,$btn-warning-color,color,#fff
+Button,Danger Button,$btn-danger-bg,color,$brand-danger
+Button,Danger Button,$btn-danger-border,color,"darken($btn-danger-bg, 5%)"
+Button,Danger Button,$btn-danger-color,color,#fff
