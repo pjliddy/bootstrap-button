@@ -8,6 +8,9 @@
           <li>
             {{#link-to "users"}}Users{{/link-to}}
           </li>
+          <li>
+            {{#link-to "themes"}}Themes{{/link-to}}
+          </li>
         {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -29,7 +32,7 @@
   </div>
 </nav>
 
-<h1>Welcome to Ember!</h1>
+<h1>Boostrap Button Builder</h1>
 
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}

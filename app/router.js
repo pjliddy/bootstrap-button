@@ -11,6 +11,10 @@ Router.map(function() {
   this.route('sign-in');
   this.route('change-password');
   this.route('users');
+
+  this.route('themes');
+  this.route('theme', {path: '/themes/:theme_id'});
+
 });
 
 export default Router;
