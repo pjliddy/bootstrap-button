@@ -1,2 +1,11 @@
 {{hamburger-menu}}
-{{#link-to "application" class="navbar-brand"}}Home{{/link-to}}
+{{!-- {{#link-to "application" class="navbar-brand"}}Home{{/link-to}} --}}
+{{!-- <li>
+  {{#link-to "users"}}Users{{/link-to}}
+</li> --}}
+
+{{#if isAuthenticated}}
+  {{#link-to "themes" class="navbar-brand"}}Home{{/link-to}}
+{{else}}
+  {{#link-to "application" class="navbar-brand"}}Home{{/link-to}}
+{{/if}}
