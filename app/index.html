@@ -14,12 +14,14 @@
 
     {{content-for "head-footer"}}
   </head>
-  <body class="container-fluid">
+  <body>
+    <div class="container-fluid">
     {{content-for "body"}}
 
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/bootstrap-button.js"></script>
 
     {{content-for "body-footer"}}
+  </div>
   </body>
 </html>

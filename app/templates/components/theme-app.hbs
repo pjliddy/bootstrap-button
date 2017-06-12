@@ -1,0 +1,11 @@
+{{nav-bar}}
+
+<h1>Boostrap Button Builder</h1>
+
+{{#each flashMessages.queue as |flash|}}
+  {{flash-message flash=flash}}
+{{/each}}
+
+<div class="col-sm-12">
+  {{outlet}}
+</div>
