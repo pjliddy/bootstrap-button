@@ -13,7 +13,7 @@ Router.map(function() {
   this.route('users');
 
   this.route('themes');
-  this.route('theme', {path: '/themes/:theme_id'});
+  this.route('theme', { path: '/themes/:theme_id' });
 
 });
 

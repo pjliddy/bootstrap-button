@@ -1,0 +1,5 @@
+<h2>{{model.name}}</h2>
+
+{{#each model.vars as |var|}}
+  <p>{{var.variable}}: {{var.value}}</p>
+{{/each}}

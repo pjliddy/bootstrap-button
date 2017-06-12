@@ -8,7 +8,7 @@ module.exports = function(defaults) {
       includePaths: [
         'bower_components/bootstrap-sass/assets/stylesheets'
       ]
-    }
+    },
   });
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
