@@ -87,6 +87,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   - Application displays the `variables` file so the user can save it to their project
 
 
+## Wireframes
+
+### Public (Unauthenticated View)
+
+![Public View](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/00-public.png)
+
+### User (Authenticated View)
+
+![User View](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/01-user.png)
+
+### Theme Customization View
+
+![Public View](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/02-theme.png)
+
+
 ## Data Model
 
 ### Theme Object
