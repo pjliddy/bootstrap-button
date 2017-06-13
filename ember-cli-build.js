@@ -9,6 +9,12 @@ module.exports = function(defaults) {
         'bower_components/bootstrap-sass/assets/stylesheets'
       ]
     },
+
+    'ember-bootstrap': {
+      'bootstrapVersion': 3,
+      'importBootstrapFont': true,
+      'importBootstrapCSS': false
+    }
   });
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');

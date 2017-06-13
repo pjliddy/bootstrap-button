@@ -1,8 +1,11 @@
 import Ember from 'ember'
 
 export default Ember.Route.extend({
+  tagName: 'div',
+  classNames: ['row'],
+
   model(params) {
-    return this.get('store').findRecord('theme', params.theme_id)
+    return this.get('store').findRecord('theme', params.theme_id);
   },
   actions: {
     // toggleItemDone(item) {
@@ -21,4 +24,4 @@ export default Ember.Route.extend({
     //   item.save();
     // }
   }
-})
+});

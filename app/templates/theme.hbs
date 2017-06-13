@@ -1,7 +1,19 @@
-<h2>{{model.name}}</h2>
 
-{{#each model.vars as |var|}}
-  <p>{{var.variable}}: {{var.value}}</p>
-{{/each}}
+{{theme-layout model=model}}
 
-{{theme-layout}}
+<aside class="col-md-3">
+  {{#each model.vars as |var|}}
+    {{!-- <p>{{var.variable}}: {{var.value}}</p> --}}
+    <label for="{{var.variable}}">{{var.variable}}</label>
+    {{!-- <div class="input-group"> --}}
+      {{!-- <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span> --}}
+      {{input type="email"
+             class="form-control"
+             id="{{var.variable}}"
+             placeholder="{{var.type}}"
+             value=var.value
+           }}
+    {{!-- </div> --}}
+    {{!-- <p class="help-block">Please enter an email address.</p> --}}
+  {{/each}}
+</aside>
