@@ -1,4 +1,4 @@
-{{email-input email=credentials.email}}
+{{!-- {{email-input email=credentials.email}}
 {{password-input password=credentials.password}}
 
 <button type="submit" class="btn btn-primary" {{action "submit"}}>
@@ -7,4 +7,24 @@
 
 <button class="btn btn-default" {{action "reset"}}>
   Cancel
-</button>
+</button> --}}
+
+<fieldset>
+  <legend>Sign In</legend>
+    {{email-input email=credentials.email}}
+  <div class="form-group">
+    {{password-input password=credentials.password}}
+  </div>
+  <div class="btn-toolbar">
+    <button type="submit" class="btn btn-default" {{action "reset"}}><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+    <button type="submit" class="btn btn-primary" {{action "submit"}}><span class="glyphicon glyphicon-log-in"></span> Sign In</button>
+
+    {{!-- <button type="submit" class="btn btn-primary" {{action "submit"}}>
+      Sign Up
+    </button> --}}
+
+    {{!-- <button class="btn btn-default" {{action "reset"}}>
+      Cancel
+    </button> --}}
+  </div>
+</fieldset>

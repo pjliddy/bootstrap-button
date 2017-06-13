@@ -14,6 +14,7 @@ export default Ember.Route.extend({
       return this.get('auth').signIn(credentials)
       .then(() => this.transitionTo('themes'))
       .then(() => this.get('flashMessages').success('Thanks for signing in!'))
+      .then(() => console.log(`signIn ${credentials}`))
       .catch(() => {
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');
