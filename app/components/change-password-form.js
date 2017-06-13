@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'form',
-  classNames: ['form-horizontal'],
+  classNames: ['form form-auth'],
 
   passwords: {},
 
@@ -13,6 +13,7 @@ export default Ember.Component.extend({
 
     reset () {
       this.set('passwords', {});
-    },
+      this.sendAction('reset');
+    }
   },
 });

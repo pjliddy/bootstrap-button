@@ -2,16 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'form',
-  classNames: ['form auth-form'],
+  classNames: ['form form-auth'],
 
   actions: {
     submit () {
       this.sendAction('submit', this.get('credentials'));
-      console.log(`sign-up-form submit`)
     },
 
     reset () {
       this.set('credentials', {});
+      this.sendAction('reset');
     },
   },
 });
