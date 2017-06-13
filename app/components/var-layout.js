@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'div',
-  classNames: ['bt col-md-9']
+  tagName: 'aside',
+  classNames: ['col-md-3']
 });

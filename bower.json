@@ -2,8 +2,9 @@
   "name": "bootstrap-button",
   "dependencies": {
     "ember": "~2.10.1",
-    "ember-cli-shims": "0.1.3",
+    "ember-cli-shims": "~0.1.1",
     "ember-qunit-notifications": "0.1.0",
-    "blob-polyfill": "^1.0.20150320"
+    "blob-polyfill": "^1.0.20150320",
+    "underscore": "^1.8.3"
   }
 }
