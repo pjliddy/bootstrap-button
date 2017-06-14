@@ -1,8 +1,9 @@
 <h2>Themes</h2>
 
 <ul>
-{{#each model as |theme|}}
-  {{!-- <li>{{theme.name}}</li> --}}
-  <li>{{#link-to 'theme' theme}} {{theme.name}}{{/link-to}}</li>
-{{/each}}
+  {{#each model as |theme|}}
+    <li>
+      {{#link-to 'theme' theme}} {{theme.name}}{{/link-to}}
+    </li>
+  {{/each}}
 </ul>

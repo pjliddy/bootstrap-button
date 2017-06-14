@@ -10,15 +10,15 @@ module.exports = function(defaults) {
       ]
     },
 
-    'ember-bootstrap': {
-      'bootstrapVersion': 3,
-      'importBootstrapFont': true,
-      'importBootstrapCSS': false
-    },
-
-    'ember-composable-helpers': {
-      only: ['sort-by', 'group-by']
-    }
+    // 'ember-bootstrap': {
+    //   'bootstrapVersion': 3,
+    //   'importBootstrapFont': true,
+    //   'importBootstrapCSS': false
+    // },
+    //
+    // 'ember-composable-helpers': {
+    //   only: ['dasherize']
+    // }
   });
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');

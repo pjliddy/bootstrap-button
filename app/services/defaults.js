@@ -433,15 +433,3 @@ export default Ember.Service.extend({
   //   this.get('items').pushObject(item);
   // },
 });
-
-
-// sample use in route controller for routes/defaults
-
-// import Ember from 'ember';
-//
-// export default Ember.Route.extend({
-//   model() {
-//     defaults = Ember.inject.service('defaults');
-//     return = this.get('defaults').get('vars');
-//   }
-// });

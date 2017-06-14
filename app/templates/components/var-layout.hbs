@@ -1,29 +1,50 @@
-{{#bs-accordion as |cat|}}
+{{!-- Categories accordion --}}
 
+<div class="panel-group" id="config-vars">
   {{#each-in (group-by vars "category") as |category vars|}}
-    {{#cat.item value=category title=category}}
-      {{#bs-accordion as |subcat|}}
 
-        {{#each-in (group-by vars "subcategory") as |subcategory catvars|}}
-          {{#subcat.item value=subcategory title=subcategory}}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#config-vars" href="#collapse-{{dashify category}}">
+        {{category}}</a>
+      </h4>
+      </div>
 
-            {{#each catvars as |var|}}
-              <div class="form-group">
-                <label for="var.variable">{{var.variable}}</label>
-                {{input type="text"
-                       class="form-control"
-                       id=var.variable
-                       placeholder=var.type
-                       value=var.value
-                     }}
+      <div id="collapse-{{dashify category}}" class="panel-collapse collapse">
+        <div class="panel-body">
+
+          {{!-- Subcategories accordion --}}
+
+          <div class="panel-group" id="config-vars-{{dashify category}}">
+            {{#each-in (group-by vars "subcategory") as |subcategory vars|}}
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#config-vars-{{dashify category}}" href="#collapse-{{dashify category}}-{{dashify subcategory}}">
+                {{subcategory}}</a>
+              </h4>
+                </div>
+                <div id="collapse-{{dashify category}}-{{dashify subcategory}}" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    {{#each vars as |var|}}
+                      <div class="form-group">
+                        <label for="var.variable">{{var.variable}}</label> {{input type="text"
+                             class="form-control"
+                             id=var.variable
+                             placeholder=var.type
+                             value=var.value
+                           }}
+                      </div>
+                    {{/each}}
+                  </div>
+                </div>
               </div>
-            {{/each}}
-
-          {{/subcat.item}}
-        {{/each-in}}
-
-      {{/bs-accordion}}
-    {{/cat.item}}
+            {{/each-in}}
+          </div>
+        </div>
+      </div>
+    </div>
   {{/each-in}}
-
-{{/bs-accordion}}
+</div>

@@ -15,8 +15,8 @@
 
 @import 'app-variables';
 // @import 'bootstrap-sprockets';
-// @import 'bootstrap';
-// @import 'bootstrap/theme';
+@import 'bootstrap';
+@import 'bootstrap/theme';
 
-@import "ember-bootstrap/bootstrap";
+// @import "ember-bootstrap/bootstrap";
 @import 'app-styles';
