@@ -1,6 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'div',
-  classNames: ['new-theme-form form-group'],
+  actions: {
+    submit () {
+      const name = this.get('name');
+
+      // add default vars to data
+      this.sendAction('createNewTheme', name);
+    },
+    reset () {
+      this.sendAction('reset');
+    }
+  }
 });

@@ -9,14 +9,13 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    createTheme (data) {
+    createNewTheme (name) {
+      const data = {
+        name: name
+      };
       data.vars = this.get('defaults').get('vars');
       const theme = this.get('store').createRecord('theme', data);
       theme.save();
-    },
-    submit () {
-      this.get('flashMessages')
-      .success('New Theme Submit.');
     }
     // toggleItemDone(item) {
     //   // toggle value for item.done
@@ -29,10 +28,10 @@ export default Ember.Route.extend({
     //   item.destroyRecord();
     //   // item.save();
     // },
-    // createItem(data) {
-    //   let item = this.get('store').createRecord('item', data);
-    //   item.save();
-    // }
+
+    // deleteItem (item) {
+    //   this.sendAction('deleteItem', item);
+    // },
   }
 });
 

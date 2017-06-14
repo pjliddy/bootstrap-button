@@ -8,8 +8,13 @@ export default Ember.Component.extend({
 
   actions: {
     toggleNewTheme () {
-      this.get('flashMessages')
-      .success('Toggle New Theme.');
+      return this.toggleProperty('hideNewTheme');
+    },
+    createNewTheme (name) {
+      console.log('new-theme', name);
+      this.sendAction('createNewTheme', name);
+    },
+    reset () {
       return this.toggleProperty('hideNewTheme');
     }
   }
