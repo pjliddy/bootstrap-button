@@ -1,0 +1,19 @@
+git remote add grunt https://github.com/ga-wdi-boston/ember-template.git
+
+git fetch grunt
+
+git checkout grunt/grunt-deploy -- grunt/aliases.json grunt/shell.js
+
+git commit
+
+bower install
+
+npm install --save grunt-shell
+
+git add
+
+git commit
+
+git push origin master
+
+grunt deploy
