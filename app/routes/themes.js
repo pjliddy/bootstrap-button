@@ -9,10 +9,6 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    newTheme () {
-      this.get('flashMessages')
-      .success('New Theme Action.');
-    },
     createTheme (data) {
       data.vars = this.get('defaults').get('vars');
       const theme = this.get('store').createRecord('theme', data);
