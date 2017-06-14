@@ -1,13 +1,14 @@
 import Ember from 'ember'
 
 export default Ember.Route.extend({
-  tagName: 'div',
-  classNames: ['row theme-grid'],
-
   model(params) {
     return this.get('store').findRecord('theme', params.theme_id);
   },
   actions: {
+    checkVarUpdate (theme) {
+      theme.save();
+    }
+
     // toggleItemDone(item) {
     //   // toggle value for item.done
     //   item.toggleProperty('done');

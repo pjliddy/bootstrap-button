@@ -1,50 +1,54 @@
+<aside class="col-md-3">
 {{!-- Categories accordion --}}
+  <div class="panel-group" id="config-vars">
+    {{#each-in (group-by vars "category") as |category vars|}}
 
-<div class="panel-group" id="config-vars">
-  {{#each-in (group-by vars "category") as |category vars|}}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#config-vars" href="#collapse-{{dashify category}}">
+          {{category}}</a>
+        </h4>
+        </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#config-vars" href="#collapse-{{dashify category}}">
-        {{category}}</a>
-      </h4>
-      </div>
+        <div id="collapse-{{dashify category}}" class="panel-collapse collapse">
+          <div class="panel-body">
 
-      <div id="collapse-{{dashify category}}" class="panel-collapse collapse">
-        <div class="panel-body">
+            {{!-- Subcategories accordion --}}
 
-          {{!-- Subcategories accordion --}}
+            <div class="panel-group" id="config-vars-{{dashify category}}">
+              {{#each-in (group-by vars "subcategory") as |subcategory vars|}}
 
-          <div class="panel-group" id="config-vars-{{dashify category}}">
-            {{#each-in (group-by vars "subcategory") as |subcategory vars|}}
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#config-vars-{{dashify category}}" href="#collapse-{{dashify category}}-{{dashify subcategory}}">
+                  {{subcategory}}</a>
+                </h4>
+                  </div>
+                  <div id="collapse-{{dashify category}}-{{dashify subcategory}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      {{#each vars as |var|}}
+                        <div class="form-group">
+                          <label for="var.variable">{{var.variable}}</label> {{input type="text"
+                               class="form-control"
+                               id=var.variable
+                               placeholder=var.type
+                               value=var.value
+                               focus-out="checkVarUpdate"
+                               enter="checkVarUpdate"
+                             }}
 
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#config-vars-{{dashify category}}" href="#collapse-{{dashify category}}-{{dashify subcategory}}">
-                {{subcategory}}</a>
-              </h4>
-                </div>
-                <div id="collapse-{{dashify category}}-{{dashify subcategory}}" class="panel-collapse collapse">
-                  <div class="panel-body">
-                    {{#each vars as |var|}}
-                      <div class="form-group">
-                        <label for="var.variable">{{var.variable}}</label> {{input type="text"
-                             class="form-control"
-                             id=var.variable
-                             placeholder=var.type
-                             value=var.value
-                           }}
-                      </div>
-                    {{/each}}
+                        </div>
+                      {{/each}}
+                    </div>
                   </div>
                 </div>
-              </div>
-            {{/each-in}}
+              {{/each-in}}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  {{/each-in}}
-</div>
+    {{/each-in}}
+  </div>
+</aside>

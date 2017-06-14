@@ -21,7 +21,13 @@ export default Ember.Route.extend({
       // deletes record and persists the change to db
       theme.destroyRecord();
       theme.save();
+    },
+    updateTheme () {
+
+      // knows new list.title
+      // theme.save();
     }
+
     // toggleItemDone(item) {
     //   // toggle value for item.done
     //   item.toggleProperty('done');

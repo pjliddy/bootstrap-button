@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'aside',
-  classNames: ['col-md-3']
+  actions: {
+    checkVarUpdate () {
+    const theme = this.get('theme');
+    this.sendAction('checkVarUpdate', theme);
+    }
+  }
 });
