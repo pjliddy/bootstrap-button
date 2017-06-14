@@ -16,6 +16,11 @@ export default Ember.Route.extend({
       data.vars = this.get('defaults').get('vars');
       const theme = this.get('store').createRecord('theme', data);
       theme.save();
+    },
+    deleteTheme (theme) {
+      // deletes record and persists the change to db
+      theme.destroyRecord();
+      theme.save();
     }
     // toggleItemDone(item) {
     //   // toggle value for item.done

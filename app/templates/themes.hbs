@@ -3,7 +3,8 @@
 <ul>
   {{#each model as |theme|}}
     <li>
-      {{#link-to 'theme' theme}} {{theme.name}}{{/link-to}}
+      {{#link-to 'theme' theme}}{{theme.name}}{{/link-to}}
+      <button class="btn btn-xs btn-default" {{action "deleteTheme" theme}}><i class="glyphicon glyphicon-trash"></i></button>
     </li>
   {{/each}}
 </ul>
