@@ -1,62 +1,29 @@
+{{#bs-accordion as |cat|}}
 
-{{!-- {{#each (sort-by vars "category") as |var|}}
-  <p>{{var.category}}</p>
-{{/each}} --}}
+  {{#each-in (group-by vars "category") as |category vars|}}
+    {{#cat.item value=category title=category}}
+      {{#bs-accordion as |subcat|}}
 
-{{#each-in (group-by vars "category") as |category var|}}
-  <h3>{{category}}</h3>
-  {{#each-in (group-by vars "subcategory") as |subcategory var|}}
-    <h4>{{subcategory}}</h4>
-      {{#each var as |var|}}
-        <p>{{var.variable}}</p>
-      {{/each}}
+        {{#each-in (group-by vars "subcategory") as |subcategory catvars|}}
+          {{#subcat.item value=subcategory title=subcategory}}
+
+            {{#each catvars as |var|}}
+              <div class="form-group">
+                <label for="var.variable">{{var.variable}}</label>
+                {{input type="text"
+                       class="form-control"
+                       id=var.variable
+                       placeholder=var.type
+                       value=var.value
+                     }}
+              </div>
+            {{/each}}
+
+          {{/subcat.item}}
+        {{/each-in}}
+
+      {{/bs-accordion}}
+    {{/cat.item}}
   {{/each-in}}
-{{/each-in}}
 
-{{!-- {{#each-in (group-by "type" vars) as |type vars|}}
-  <h4>{{type}}</h4>
-  {{#each vars as |var|}}
-    <p>{{var.variable}} - {{var.type}}</p>
-  {{/each}}
-{{/each-in}} --}}
-
-{{!-- {{#each vars as |var|}}
-  <p>{{var.category}}</p>
-  <p>{{var.subcategory}}</p>
-  <p>{{var.variable}}</p>
-{{/each}} --}}
-
-{{!-- {{#each-in (group-by "category" theme) as |category theme|}} --}}
-{{!-- {{#each-in (group-by "category" vars) as |category vars|}} --}}
-
-
-  {{!-- <h3>{{category}}</h3> --}}
-  {{!-- <div>
-    {{#each theme.vars as |var|}}
-      <p>{{var.subcategory}}</p>
-      <p>{{var.variable}}</p>
-    {{/each}}
-  </div> --}}
-{{!-- {{/each-in}} --}}
-
-
-
-{{!-- {{#each theme.vars as |var|}}
-  <label for="{{var.variable}}">{{var.variable}}</label> --}}
-
-  {{!-- <div class="input-group"> --}}
-    {{!-- <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span> --}}
-
-
-    {{!-- {{input type="email"
-           class="form-control"
-           id="{{var.variable}}"
-           placeholder="{{var.type}}"
-           value=var.value
-         }} --}}
-
-
-  {{!-- </div> --}}
-  {{!-- <p class="help-block">Please enter an email address.</p> --}}
-
-{{!-- {{/each}} --}}
+{{/bs-accordion}}
