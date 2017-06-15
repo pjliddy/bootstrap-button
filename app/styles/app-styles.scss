@@ -48,7 +48,23 @@ aside {
   position: relative;
 }
 
+.export {
+  height: 100%;
+  max-height: 100%;
+  bottom: 54px;
+  padding-bottom: 30px;
+  // overflow-y: auto;
+  overflow-y: auto;
 
+}
+
+.export-code {
+  // max-height: 80%;
+  // position:fixed;
+  // margin-bottom: 30px;
+  // overflow-y: auto;
+  margin-bottom: 30px;
+}
 
 
 

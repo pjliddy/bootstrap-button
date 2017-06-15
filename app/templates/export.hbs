@@ -1,0 +1,9 @@
+<div class="export">
+  <h2>Export {{model.name}}</h2>
+
+  <div class="well export-code">
+    {{#each model.vars as |var|}}
+      <p>"{{var.variable}}" : "{{var.value}}"</p>
+    {{/each}}
+  </div>
+</div>

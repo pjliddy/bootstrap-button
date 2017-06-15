@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('themes');
   this.route('theme', { path: '/themes/:theme_id' });
 
+  this.route('export');
 });
 
 export default Router;
