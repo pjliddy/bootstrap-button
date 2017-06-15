@@ -1,28 +1,41 @@
 import Ember from 'ember'
 
+
 export default Ember.Route.extend({
   model(params) {
     return this.get('store').findRecord('theme', params.theme_id);
   },
+
+  renderTheme(theme) {
+    const iframe = document.getElementById('layout-frame');
+    const varObjs = (theme.get('vars'));
+
+    let vars = { };
+    varObjs.forEach(e => vars[`${e.variable}`] = e.value);
+
+    const data = {
+      "message": "updateVars",
+      "vars": vars
+    };
+
+    iframe.contentWindow.postMessage(data, '*');
+  },
+
+  init (){
+    this._super();
+    console.log('themes route init:', this);
+  },
+
   actions: {
     checkVarUpdate (theme) {
       theme.save();
+      this.renderTheme(theme)
     }
+  },
 
-    // toggleItemDone(item) {
-    //   // toggle value for item.done
-    //   item.toggleProperty('done');
-    //   // persists the change to db
-    //   item.save();
-    // },
-    // deleteItem(item) {
-    //   // deletes record and persists the change to db
-    //   item.destroyRecord();
-    //   // item.save();
-    // },
-    // createItem(data) {
-    //   let item = this.get('store').createRecord('item', data);
-    //   item.save();
-    // }
-  }
+  firstRender: Ember.on('activate', function (params) {
+    // const theme = this.get('store').findRecord('theme', params.theme_id);
+    // this.renderTheme(theme);
+    console.log('activate', this)
+  })
 });
