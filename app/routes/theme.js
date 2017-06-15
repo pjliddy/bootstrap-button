@@ -1,6 +1,12 @@
 import Ember from 'ember'
 
+
 export default Ember.Route.extend({
+  init (){
+      this._super();
+      console.log('themes route init');
+    },
+
   model(params) {
     return this.get('store').findRecord('theme', params.theme_id);
   },
@@ -9,25 +15,10 @@ export default Ember.Route.extend({
       theme.save();
 
       const iframe = document.getElementById('layout-frame');
-
-      // const vars = JSON.stringify(theme.get('vars'));
       const varObjs = (theme.get('vars'));
 
-      // {
-      //   '@buttonFace': '#5B83AD',
-      //   '@buttonText': '#D9EEF2'
-      //  }
-
       let vars = { };
-      varObjs.forEach(e => {
-        // obj[`@${e.variable}`] = `${e.value}`;
-        vars[`${e.variable}`] = e.value
-
-        // return `"${e.variable}" : "${e.value}"`;
-      });
-
-      // vars = JSON.stringify(vars);
-
+      varObjs.forEach(e => vars[`${e.variable}`] = e.value);
 
       const data = {
         "message": "updateVars",
