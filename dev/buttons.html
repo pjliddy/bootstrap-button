@@ -57,15 +57,15 @@
   <script>
   $(function () {
     // updateTheme when layout loads
-    const vars = {
-      "@font-family-base": "Courier"
-    };
+    // const vars = {
+    //   "@font-family-base": "Courier"
+    // };
 
     // $.each( varObjs, function( i, varObj ) {
     //   vars['@' + varObj.name] = varObj.output;
     // });
 
-    less.modifyVars( vars );
+    // less.modifyVars( vars );
     less.refreshStyles();
 
     // updateVars();
@@ -77,9 +77,11 @@
   function handleMessage(e) {
    const message = e.data.message;
    const vars = e.data.vars;
-   //
-  //  console.log('message received:', message);
-  //  console.log('vars:', vars);
+
+   console.log('message received:', message);
+   console.log('vars:', vars);
+
+  //  debugger;
 
     if (e.origin == '*') {
      return;
@@ -93,25 +95,16 @@
   };
 
   function updateVars(vars) {
+
+    // less.modifyVars(
+    //   {
+    //   '@buttonFace': '#5B83AD',
+    //   '@buttonText': '#D9EEF2'
+    //   }
+    // );
+
     less.modifyVars( vars );
     less.refreshStyles();
-    // $.ajax({
-    //   url: '/getvars',
-    //   type: 'POST',
-    //   success: function( varObjs ) {
-    //     var vars = new Object;
-    //
-    //     $.each( varObjs, function( i, varObj ) {
-    //       vars['@' + varObj.name] = varObj.output;
-    //     });
-    //
-    //     less.modifyVars( vars );
-    //     less.refreshStyles();
-    //   },
-    //   error: function(error) {
-    //     console.log('error: ' + error);
-    //   }
-    // });
   };
 
   </script>

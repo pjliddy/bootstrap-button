@@ -13,12 +13,21 @@ export default Ember.Route.extend({
       // const vars = JSON.stringify(theme.get('vars'));
       const varObjs = (theme.get('vars'));
 
-      const vars = varObjs.map(e => {
-        const obj = { };
-        obj[e.variable] = e.value;
+      // {
+      //   '@buttonFace': '#5B83AD',
+      //   '@buttonText': '#D9EEF2'
+      //  }
 
-        return obj;
+      let vars = { };
+      varObjs.forEach(e => {
+        // obj[`@${e.variable}`] = `${e.value}`;
+        vars[`${e.variable}`] = e.value
+
+        // return `"${e.variable}" : "${e.value}"`;
       });
+
+      // vars = JSON.stringify(vars);
+
 
       const data = {
         "message": "updateVars",
