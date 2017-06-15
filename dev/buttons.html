@@ -11,14 +11,14 @@
 
   <!-- <link rel="stylesheet/less" href="{{ url_for('static', filename='bootstrap/builder/less/swatches.less') }}" type="text/less"> -->
 
-  <link rel="stylesheet/less" href="/public/bootstrap-less/less/bootstrap.less" type="text/less">
+  <link rel="stylesheet/less" href="https://s3.amazonaws.com/pliddy-ga/bootstrap-button/bootstrap-less/less/bootstrap.less" type="text/less">
+  <link rel="stylesheet/less" href="https://s3.amazonaws.com/pliddy-ga/bootstrap-button/bootstrap-less/less/theme.less" type="text/less">
 
   <title>Bootstrap Theme Builder</title>
 </head>
 
 <body>
   <div class="container layout-content">
-    <h2>Theme: {{model.name}}</h2>
     <h3>Default Button</h3>
     <div class="btn-toolbar">
       <button class="btn btn-default">Default Button</button>
@@ -52,8 +52,69 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>less = {env: "development"};</script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
   <!-- <script src={{ url_for('static', filename='js/layout.js') }}></script> -->
+  <script>
+  $(function () {
+    // updateTheme when layout loads
+    const vars = {
+      "@font-family-base": "Courier"
+    };
+
+    // $.each( varObjs, function( i, varObj ) {
+    //   vars['@' + varObj.name] = varObj.output;
+    // });
+
+    less.modifyVars( vars );
+    less.refreshStyles();
+
+    // updateVars();
+
+    // updateVars();
+    window.addEventListener("message", handleMessage, false);
+  });
+
+  function handleMessage(e) {
+   const message = e.data.message;
+   const vars = e.data.vars;
+   //
+  //  console.log('message received:', message);
+  //  console.log('vars:', vars);
+
+    if (e.origin == '*') {
+     return;
+    } else {
+      switch(e.data.message){
+        case 'updateVars':
+          updateVars(vars);
+          break;
+      }
+    }
+  };
+
+  function updateVars(vars) {
+    less.modifyVars( vars );
+    less.refreshStyles();
+    // $.ajax({
+    //   url: '/getvars',
+    //   type: 'POST',
+    //   success: function( varObjs ) {
+    //     var vars = new Object;
+    //
+    //     $.each( varObjs, function( i, varObj ) {
+    //       vars['@' + varObj.name] = varObj.output;
+    //     });
+    //
+    //     less.modifyVars( vars );
+    //     less.refreshStyles();
+    //   },
+    //   error: function(error) {
+    //     console.log('error: ' + error);
+    //   }
+    // });
+  };
+
+  </script>
 
 </body>
 </html>

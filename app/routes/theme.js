@@ -7,6 +7,25 @@ export default Ember.Route.extend({
   actions: {
     checkVarUpdate (theme) {
       theme.save();
+
+      const iframe = document.getElementById('layout-frame');
+
+      // const vars = JSON.stringify(theme.get('vars'));
+      const varObjs = (theme.get('vars'));
+
+      const vars = varObjs.map(e => {
+        const obj = { };
+        obj[e.variable] = e.value;
+
+        return obj;
+      });
+
+      const data = {
+        "message": "updateVars",
+        "vars": vars
+      };
+
+      iframe.contentWindow.postMessage(data, '*');
     }
 
     // toggleItemDone(item) {
