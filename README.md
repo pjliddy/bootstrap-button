@@ -1,164 +1,37 @@
-# Bootstrap Button Theme
+# Bootstrap Button Client
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+![Bootstrap Button](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/screenshot.png)
+
+This application is a tool for designers and developers to be able to create Bootstrap themes by creating custom configuratiions of the variables that LESS uses to compile the CSS for Bootstrap.
+
 
 ## Project Links
 
-- Client GitHub Repository: https://github.com/pjliddy/bootstrap-button-client/
-- Client Deployed: https://pjliddy.github.io/bootstrap-button-client/
-- API GitHub Repository: https://github.com/pjliddy/bootstrap-button-server/
-- API Deployed: https://bootstrap-button.herokuapp.com/
+- **Deployed Client:** https://pjliddy.github.io/bootstrap-button-client/
+- **Deployed API:** https://bootstrap-button.herokuapp.com/
+- **API GitHub Repository:** https://github.com/pjliddy/bootstrap-button-server/
+- Client GitHub Repository (this one): https://github.com/pjliddy/bootstrap-button-client/
+
+## Technologies Used
+
+Explanations of the technologies used
+
+## Approach
+
+A couple paragraphs about the general approach you took
 
 ## User Stories
 
-### Authenication
-
-- **Sign Up:** As a new user, I want to sign up so I can be an authenticated user and user the application. (CREATE)
-  - User loads application.
-  - User clicks `sign up`.
-  - Application displays sign up form.
-  - User enters `email`, `password`, and `confirm-password`.
-  - Application checks that form input is valid.
-  - Applicaiton authenticates user.
-  - Application displays start screen.
-
-
-- **Sign In:** As an unauthenticated user, I want to sign in so I can access my account. (READ)
-  - User loads application
-  - User clicks `sign in`.
-  - Application displays sign in form.
-  - User enters `email` and `password`.
-  - Application checks that form input is valid.
-  - Applicaiton authenticates user.
-  - Application displays start screen.
-
-
-- **Change Password:** As an authenticated user, I want to change my password so my account is secure. (UPDATE)
-  - User clicks on `change password`.
-  - Applicaiton displays change password form.
-  - User enters `current-password`, `new-password`, and `confirm-password`.
-  - Application checks that form input is valid.
-  - Application saves new password to database.
-  - Application displays confirmation message: `Your password has been changed`
-
-
-- **Sign Out:** As an authenticated user, I want to sign out so my account is secure when I am not using the application (DESTROY)
-  - User clicks on `sign out`.
-  - Application sends request to server
-  - Application receives response
-  - Application removes current user from `store`
-  - Application clears working theme and content view.
-  - Application return to public (non-authenticated) view
-
-
-### Theme Editing
-- **Create New Theme:** As an authenticated user, I want to begin a new theme so that I can customize it. (CREATE)
-  - User clicks `new theme`
-  - User specifies name for new theme and clicks `create`
-  - Application loads values of Bootstrap theme from the database
-  - Applicaion saves new theme with default values
-
-
-- **Load Theme:** As an authenticated user, I want to load in a saved theme so I can further customize it. (READ)
-  - User views list of saved themes
-  - User clicks `load` button next to one of their saved themes
-  - Application loads values of saved theme from the database
-  - Application updates SCSS variables with new values and re-compiles CSS from SASS.
-  - Application updates display with new compiled styles.
-
-
-- **Update Theme Variables:** As an authenticated user, I want to edit and save the values of theme variables so that I use it later. (UPDATE)
-  - User changes the value of one of the theme variables in the current theme and presses `enter` or generates `blur` event on variable field.
-  - Application updates SCSS variable with new value and re-compiles CSS from SASS.
-  - Applicaiton saves the new value of the variable to the database.
-
-
-- **Delete Theme:** As an authenticated user, I want to delete a custom theme because it no longer will be used. (DESTROY)
-  - User views list of saved themes
-  - User clicks `delete` button next to one of their saved themes
-  - Application displays a modal, prompting user `are you sure?`
-  - User clicks `confirm`
-  - Application deletes selected theme from database and refreshes view
-
-
-- **Export Theme:** As a user who has completed a custom theme, I want to export a custom variables SCSS file so that I can use it in my application.
-  - User clicks `export` in the current theme view
-  - Application generates a SCSS `variables` file
-  - Application displays the `variables` file so the user can save it to their project
-
+[Click Here for User Stories](user-stories.md)
 
 ## Wireframes
 
-### Public (Unauthenticated View)
+[Click Here for Wireframe](wireframe.md)
 
-![Public View](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/00-public.png)
+## Dependencies
 
-### User (Authenticated View)
+Installation instructions for any dependencies
 
-![User View](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/01-user.png)
+## Challenges
 
-### Theme Customization View
-
-![Public View](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/02-theme.png)
-
-
-## Data Model
-
-### Theme Object
-
-Each theme object is composed of name-value pairs for:
-
-- `_id`: unique ID auto-generated by Mongoose/MongoDB
-- `name`: user-generated name for the theme. _"default"_ is the name for a Bootstrap theme with default values for each variable.
-- `vars`: an array of theme variable objects. Each theme variable object has five properties:
-  - `category`: the top level category for organizing and displaying variables. Categories for the button-specific variables are: Core, Geometry, Type, and Button
-  - `subcategory`: each category is broken down into 2-8 subcategories to allow for hierarchical display
-  - `variable`: the Bootstrap SASS variable name (including the `$` prefix)
-  - `type`: the type of variable. Each variable type will have a specific UI and validation. Types include:
-    - `color`: hex value for MVP; ideally, include rgb and rgba formats as well
-    - `attribute`: a list of preset attributes for certain CSS values (cursor, font-weight, link-hover-decoration)
-    - `font-family`: a list of font families; could be an attribute list or leverage Google Fonts API to display list of available fonts and access them(?)
-    - `line-height`: a floating point value without units used for type styles
-    - `size`: a number with units (px, em, %)
-  - `value`: the literal value used by SASS. Values can be:
-    - **_value_**: actual CSS value _("#ffffff" or "16px")_
-    - **_variable_**: another SASS variable _("$font-family-base")_
-    - **_function_**: a SASS function _("darken(#428bca, 6.5%)")_
-
-```json
-{
-  "_id": "XXXX",
-  "name": "default",
-  "vars":
-  [
-   {
-     "category": "Core",
-     "subcategory": "Brand Colors",
-     "variable": "$brand-primary",
-     "type": "color",
-     "value": "darken(#428bca, 6.5%)"
-   },
-   {
-     "category": "Geometry",
-     "subcategory": "Border Radius",
-     "variable": "$border-radius-base",
-     "type": "size",
-     "value": "4px"
-   },
-   {
-     "category": "Type",
-     "subcategory": "Font Family",
-     "variable": "$font-family-sans-serif",
-     "type": "font-family",
-     "value": "\"Helvetica Neue\", Helvetica, Arial, sans-serif"
-   },
-   {
-     "category": "Button",
-     "subcategory": "Core",
-     "variable": "$btn-font-weight",
-     "type": "attribute",
-     "value": "normal"
-   }
- ]
-}
-```
+Descriptions of any unsolved problems or major hurdles you had to overcome
