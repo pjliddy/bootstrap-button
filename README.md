@@ -1,8 +1,8 @@
 # Bootstrap Button Client
 
-![Bootstrap Button](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/screenshot.png)
-
 This application is a tool for designers and developers to be able to create Bootstrap themes by creating custom configuratiions of the variables that LESS uses to compile the CSS for Bootstrap. It allows users to create new themes based on Bootstrap's default variables, then modify those variables and see the result in real-time. When the theme is complete, the application can generate a LESS variables file that can be included in a project's styles.
+
+![Bootstrap Button](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/screenshot.png)
 
 
 ## Project Links
