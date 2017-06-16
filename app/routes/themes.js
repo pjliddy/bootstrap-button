@@ -22,37 +22,5 @@ export default Ember.Route.extend({
       theme.destroyRecord();
       theme.save();
     },
-    updateTheme () {
-
-      // knows new list.title
-      // theme.save();
-    }
-
-    // toggleItemDone(item) {
-    //   // toggle value for item.done
-    //   item.toggleProperty('done');
-    //   // persists the change to db
-    //   item.save();
-    // },
-    // deleteItem(item) {
-    //   // deletes record and persists the change to db
-    //   item.destroyRecord();
-    //   // item.save();
-    // },
-
-    // deleteItem (item) {
-    //   this.sendAction('deleteItem', item);
-    // },
   }
 });
-
-// sample use in route controller for routes/defaults
-
-// import Ember from 'ember';
-//
-// export default Ember.Route.extend({
-//   model() {
-//     defaults = Ember.inject.service('defaults');
-//     return = this.get('defaults').get('vars');
-//   }
-// });

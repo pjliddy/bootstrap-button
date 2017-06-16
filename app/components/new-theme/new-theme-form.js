@@ -5,8 +5,12 @@ export default Ember.Component.extend({
     submit () {
       const name = this.get('name');
 
-      // add default vars to data
-      this.sendAction('createNewTheme', name);
+      if (!(name.length > 1)) {
+        this.get('flashMessages')
+        .warning(`Please provide theme name.`);
+      } else {
+        this.sendAction('createNewTheme', name);
+      }
     },
     reset () {
       this.sendAction('reset');

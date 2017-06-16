@@ -23,7 +23,7 @@ export default Ember.Route.extend({
 
   init (){
     this._super();
-    console.log('themes route init:', this);
+    // console.log('themes route init:', this);
   },
 
   actions: {
@@ -36,6 +36,6 @@ export default Ember.Route.extend({
   firstRender: Ember.on('activate', function (params) {
     // const theme = this.get('store').findRecord('theme', params.theme_id);
     // this.renderTheme(theme);
-    console.log('activate', this)
+    // console.log('activate', this)
   })
 });

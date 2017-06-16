@@ -10,10 +10,13 @@ export default Ember.Component.extend({
     toggleNewTheme () {
       return this.toggleProperty('hideNewTheme');
     },
+
     createNewTheme (name) {
-      console.log('new-theme', name);
+      // console.log('new-theme', name);
       this.sendAction('createNewTheme', name);
+      return this.toggleProperty('hideNewTheme');
     },
+
     reset () {
       return this.toggleProperty('hideNewTheme');
     }
