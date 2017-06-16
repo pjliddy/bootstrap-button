@@ -8,12 +8,35 @@ export default Ember.Component.extend({
 
   actions: {
     submit () {
-      this.sendAction('submit', this.get('credentials'));
+      const credentials = this.get('credentials');
+
+      if (!credentials.email) {
+        this.get('flashMessages')
+        .warning(`Please provide an email address.`);
+      } else if (!credentials.password) {
+        this.get('flashMessages')
+        .warning(`Please provide a password.`);
+      } else if (!credentials.passwordConfirmation) {
+        this.get('flashMessages')
+        .warning(`Please confirm your password.`);
+      } else if ( !(credentials.passwordConfirmation === credentials.password)) {
+        this.get('flashMessages')
+        .warning(`Your password confirmation didn't match`);
+      } else {
+        this.sendAction('submit', credentials);
+      }
     },
 
     reset () {
       this.set('credentials', {});
       this.sendAction('reset');
+      console.log('reset')
     },
+
+    deactivate () {
+      this.reset();
+      console.log(this.get('credentials'));
+    }
+
   },
 });

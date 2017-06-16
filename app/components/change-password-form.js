@@ -8,12 +8,27 @@ export default Ember.Component.extend({
 
   actions: {
     submit () {
-      this.sendAction('submit', this.get('passwords'));
+      const passwords = this.get('passwords');
+
+      if (!passwords.previous) {
+        this.get('flashMessages')
+        .warning(`Please enter your current password.`);
+      } else if (!passwords.next) {
+        this.get('flashMessages')
+        .warning(`Please enter your new password.`);
+      } else {
+        this.sendAction('submit', passwords);
+      }
     },
 
     reset () {
       this.set('passwords', {});
       this.sendAction('reset');
-    }
+    },
+
+    clearForm: Ember.on('deactivate', function () {
+      this.reset();
+    })
+
   },
 });
