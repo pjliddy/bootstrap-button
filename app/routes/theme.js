@@ -1,13 +1,25 @@
 import Ember from 'ember';
+import { storageFor } from 'ember-local-storage';
 
 export default Ember.Route.extend({
-  target: Ember.inject.service('window-messenger-client'),
+  currentTheme: storageFor('theme'),
 
-  model(params) {
+  model (params) {
     return this.get('store').findRecord('theme', params.theme_id);
   },
 
-  renderTheme(theme) {
+  init () {
+    this._super();
+    // listen to iFrame with layout
+    // window.addEventListener("message", this.handleMessage, false);
+
+    window.addEventListener("message", (e) => {
+      this.handleMessage(e, "test data");
+    }, false);
+
+  },
+
+  renderTheme (theme) {
     const iframe = document.getElementById('layout-frame');
     const varObjs = (theme.get('vars'));
 
@@ -22,11 +34,23 @@ export default Ember.Route.extend({
     iframe.contentWindow.postMessage(data, '*');
   },
 
-  init (){
-    this._super();
-    // listen to iFrame with layout
-    window.addEventListener("message", handleMessage, false);
-  },
+  handleMessage (e, data) {
+   // const message = e.data.message;
+   // const data = e.data.data;
+
+   // console.log('app message received:', message);
+   // console.log('data:', data);
+
+   if (e.origin === '*') {
+     return;
+   } else {
+     switch (e.data.message) {
+       case 'document-ready':
+        console.log('message: layout document-ready:', data);
+        break;
+     }
+   }
+ },
 
   actions: {
     checkVarUpdate (theme) {
@@ -35,21 +59,3 @@ export default Ember.Route.extend({
     }
   },
 });
-
-function handleMessage(e) {
- // const message = e.data.message;
- // const data = e.data.data;
-
- // console.log('app message received:', message);
- // console.log('data:', data);
-
- if (e.origin === '*') {
-   return;
- } else {
-   switch (e.data.message) {
-     case 'document-ready':
-       console.log('message: layout document-ready');
-       break;
-   }
- }
-};

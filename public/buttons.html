@@ -53,28 +53,20 @@
     };
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
+
   <script>
     $(function() {
-      // updateTheme when layout loads
-      // const vars = {
-      //   "@font-family-base": "Courier"
-      // };
-
-      // less.modifyVars( vars );
-      // updateVars();
-
       // assemble message data object to send
       const data = {
         "message": "document-ready",
       };
 
-      // send message to parent (page loaded)
-      parent.postMessage(data, '*');
-
       // set event listener for message from parent
       window.addEventListener("message", handleMessage, false);
 
-      less.refreshStyles();
+      // send message to parent (page loaded)
+      parent.postMessage(data, '*');
+
       // less.modifyVars( vars );
       // updateVars();
 
@@ -87,7 +79,7 @@
       console.log('layout message received:', message);
       console.log('vars:', vars);
 
-      if (e.origin == '*') {
+      if (e.origin === '*') {
         return;
       } else {
         switch (e.data.message) {
