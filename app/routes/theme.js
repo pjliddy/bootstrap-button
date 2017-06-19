@@ -1,7 +1,8 @@
-import Ember from 'ember'
-
+import Ember from 'ember';
 
 export default Ember.Route.extend({
+  target: Ember.inject.service('window-messenger-client'),
+
   model(params) {
     return this.get('store').findRecord('theme', params.theme_id);
   },
@@ -23,19 +24,32 @@ export default Ember.Route.extend({
 
   init (){
     this._super();
-    // console.log('themes route init:', this);
+    // listen to iFrame with layout
+    window.addEventListener("message", handleMessage, false);
   },
 
   actions: {
     checkVarUpdate (theme) {
       theme.save();
-      this.renderTheme(theme)
+      this.renderTheme(theme);
     }
   },
-
-  firstRender: Ember.on('activate', function (params) {
-    // const theme = this.get('store').findRecord('theme', params.theme_id);
-    // this.renderTheme(theme);
-    // console.log('activate', this)
-  })
 });
+
+function handleMessage(e) {
+ // const message = e.data.message;
+ // const data = e.data.data;
+
+ // console.log('app message received:', message);
+ // console.log('data:', data);
+
+ if (e.origin === '*') {
+   return;
+ } else {
+   switch (e.data.message) {
+     case 'document-ready':
+       console.log('message: layout document-ready');
+       break;
+   }
+ }
+};

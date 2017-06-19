@@ -70,15 +70,22 @@
 
     // updateVars();
 
-    // updateVars();
+    const data = {
+      "message": "test-message",
+      "data": "test data"
+    };
+
+    parent.postMessage(data, '*');
+
     window.addEventListener("message", handleMessage, false);
+    // parent.postMessage("test-message", "https://s3.amazonaws.com", { 'data': 'test' });
   });
 
   function handleMessage(e) {
    const message = e.data.message;
    const vars = e.data.vars;
 
-   console.log('message received:', message);
+   console.log('layout message received:', message);
    console.log('vars:', vars);
 
   //  debugger;
