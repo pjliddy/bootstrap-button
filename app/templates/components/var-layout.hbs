@@ -1,9 +1,9 @@
 <aside class="">
 {{!-- Categories accordion --}}
-  <div class="panel-group" id="config-vars">
+  <div class="panel-group config-vars">
     {{#each-in (group-by vars "category") as |category vars|}}
 
-      <div class="panel panel-default">
+      <div class="panel panel-default var-group-outer">
         <div class="panel-heading">
           <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#config-vars" href="#collapse-{{dashify category}}">
@@ -19,7 +19,7 @@
             <div class="panel-group" id="config-vars-{{dashify category}}">
               {{#each-in (group-by vars "subcategory") as |subcategory vars|}}
 
-                <div class="panel panel-default">
+                <div class="panel panel-default var-group-inner">
                   <div class="panel-heading">
                     <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#config-vars-{{dashify category}}" href="#collapse-{{dashify category}}-{{dashify subcategory}}">

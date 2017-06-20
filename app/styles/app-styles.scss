@@ -39,6 +39,46 @@ aside {
   width: 100%;
 }
 
+.panel-group .panel + .panel {
+  margin-top: 0;
+}
+
+.config-vars {
+  margin-bottom: 30px;
+  overflow: auto;
+
+  .form-group:last-child {
+    margin-bottom: 10px;
+  }
+
+  .panel-group {
+    margin: 0;
+  }
+
+  .var-group-outer {
+    margin-top: 0;
+
+    .panel-body {
+      padding: 0;
+    }
+    .panel-heading {
+      background: $panel-heading-outer;
+      color: $white;
+    }
+  }
+  .var-group-inner {
+    margin-top: 0;
+
+    .panel-body{
+      padding: 10px;
+    }
+    .panel-heading {
+      background: $panel-heading-inner;
+      color: $brand-primary;
+    }
+  }
+}
+
 .form-auth,
 .new-theme-form {
   margin-top: 30px;
@@ -66,8 +106,10 @@ aside {
   margin-bottom: 30px;
 }
 
-
-
 .hide-new-theme .new-theme-form {
   display: none;
+}
+
+.navbar-inverse {
+  background: $navbar-inverse-bg;
 }
