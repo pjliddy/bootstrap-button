@@ -9,4 +9,44 @@
   {{/each}}
 </ul>
 
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="file-item file-name col-sm-6 col-xs-8">
+        <strong>Theme</strong>
+      </th>
+      <th class="file-item file-date col-sm-2 hidden-xs">
+        <strong>Created</strong>
+      </th>
+      <th class="file-item file-date col-sm-2 col-xs-2">
+        <strong>Modified</strong>
+      </th>
+      <th class="col-sm-2 col-xs-2">
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |theme|}}
+      <tr>
+        <td class="col-sm-6 col-xs-8">
+          <a class="btn btn-link theme-name">{{theme.name}}</a>
+        </td>
+        <td class="file-date file-date-created col-sm-2 hidden-xs">{{theme.createdAt}}</td>
+        <td class="file-date file-date-modified col-sm-2 col-xs-2">{{theme.updatedAt}}</td>
+        <td class="col-sm-2 col-xs-2 text-right">
+          <div class="btn-group">
+            <button class="btn btn-default">
+            <i class="glyphicon glyphicon-pencil"></i>
+          </button>
+            <button class="btn btn-default">
+            <i class="glyphicon glyphicon-trash"></i>
+          </button>
+          </div>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
 {{new-theme createNewTheme='createNewTheme' name='name'}}
