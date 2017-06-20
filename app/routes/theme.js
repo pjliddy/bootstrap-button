@@ -1,8 +1,6 @@
 import Ember from 'ember';
 import { storageFor } from 'ember-local-storage';
 
-import ENV from 'bootstrap-button/config/environment';
-
 export default Ember.Route.extend({
   // use ember-local-storage to access current theme object
   themeStore: storageFor('theme'),
