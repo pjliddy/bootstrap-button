@@ -7,14 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- load local bootstrap less files -->
-  <link rel="stylesheet/less" href="./less/bootstrap.less" type="text/less">
-  <link rel="stylesheet/less" href="./less/theme.less" type="text/less">
 
-  <title>Bootstrap Button Styler</title>
+  <!-- <link rel="stylesheet/less" href="./less/bootstrap.less" type="text/less">
+  <link rel="stylesheet/less" href="./less/theme.less" type="text/less"> -->
+  <!-- <link rel="stylesheet/less" href="./styles/bt.less" type="text/less"> -->
+  <!-- <link rel="stylesheet/less" href="./styles/bt-vars.less" type="text/less">
+  <link rel="stylesheet/less" href="./styles/bt-styles.less" type="text/less"> -->
+  <!-- <link rel="stylesheet/css" href="./styles/style.css" type="text/css"> -->
+  <link rel="stylesheet/less" href="./styles/bt.less" type="text/less">
+
+  <title>Bootstrap Buttons</title>
 </head>
 
 <body>
-  <div class="container layout-content">
+  <div class="container layout-content bt">
     <h3>Default Button</h3>
     <div class="btn-toolbar">
       <button class="btn btn-default">Default Button</button>
@@ -66,10 +72,6 @@
 
       // send message to parent (page loaded)
       parent.postMessage(data, '*');
-
-      // less.modifyVars( vars );
-      // updateVars();
-
     });
 
     function handleMessage(e) {
@@ -85,6 +87,7 @@
         switch (e.data.message) {
           case 'updateVars':
             updateVars(vars);
+            // testRender(vars);
             break;
         }
       }
@@ -99,11 +102,28 @@
       //   }
       // );
 
-      less.modifyVars(vars);
-      less.refreshStyles();
+      less.modifyVars(vars)
+        .then(less.refreshStyles());
+
     };
+
+    function testRender (vars) {
+      // $.ajax({url: "./styles/bt.less", success: function(result){
+      //   console.log (`less.render()`);
+      //
+      //   less.render(result, { filename: "./styles/style.css" })
+      //     .then(result => {
+      //       $(document.body).prepend($(`<style type="text/css">${result.css}</style>`));
+      //
+      //       // console.log(result.css)
+      //     });
+      // }});
+
+      less.modifyVars(vars)
+        // .then(less.refreshStyles());
+    }
   </script>
 
-</body>
 
+</body>
 </html>

@@ -21,5 +21,4 @@ export default Ember.Component.extend({
       return this.toggleProperty('hideNewTheme');
     }
   }
-
 });

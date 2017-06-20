@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   actions: {
     checkVarUpdate () {
       const theme = this.get('theme');
-      this.sendAction('checkVarUpdate', theme);
+      this.sendAction('updateVars', theme);
     }
   }
 });
