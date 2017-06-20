@@ -2,10 +2,14 @@ import Ember from 'ember';
 import { storageFor } from 'ember-local-storage';
 
 export default Ember.Route.extend({
-  currentTheme: storageFor('theme'),
+
+  themeStore: storageFor('theme'),
 
   model (params) {
-    return this.get('store').findRecord('theme', params.theme_id);
+    const theme = this.get('store').findRecord('theme', params.theme_id);
+    this.set('themeStore.currentTheme', theme);
+
+    return theme;
   },
 
   init () {
@@ -14,7 +18,9 @@ export default Ember.Route.extend({
     // window.addEventListener("message", this.handleMessage, false);
 
     window.addEventListener("message", (e) => {
-      this.handleMessage(e, "test data");
+      const currentTheme = this.get('themeStore.currentTheme');
+      const vars = currentTheme.get('vars');
+      this.handleMessage(e, vars);
     }, false);
 
   },
