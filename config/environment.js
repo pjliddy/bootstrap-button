@@ -57,7 +57,7 @@ module.exports = function (environment) {
     ENV.APP.rootElement = '#bootstrap-button';
   }
 
-    if (environment === 'production') {
+  if (environment === 'production') {
     ENV.rootURL = '/bootstrap-button-client';
     ENV.locationType = 'hash';
     ENV.apiHost = 'https://bootstrap-button.herokuapp.com';
