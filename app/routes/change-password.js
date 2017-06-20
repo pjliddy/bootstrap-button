@@ -23,7 +23,7 @@ export default Ember.Route.extend({
       .catch(() => {
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');
-      })
+      });
     },
     reset () {
       this.set('passwords', {});

@@ -19,7 +19,7 @@ export default Ember.Component.extend({
       } else if (!credentials.passwordConfirmation) {
         this.get('flashMessages')
         .warning(`Please confirm your password.`);
-      } else if ( !(credentials.passwordConfirmation === credentials.password)) {
+      } else if ( credentials.passwordConfirmation !== credentials.password) {
         this.get('flashMessages')
         .warning(`Your password confirmation didn't match`);
       } else {
@@ -30,12 +30,10 @@ export default Ember.Component.extend({
     reset () {
       this.set('credentials', {});
       this.sendAction('reset');
-      console.log('reset')
     },
 
     deactivate () {
       this.reset();
-      console.log(this.get('credentials'));
     }
 
   },
