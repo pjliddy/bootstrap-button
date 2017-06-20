@@ -22,10 +22,6 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      'ember-window-messenger': {
-        'parent': 'http://localhost:4200',
-        'target': 'https://s3.amazonaws.com',
-      }
     },
     googleFonts: [
       'Roboto:300,400,500,700'
