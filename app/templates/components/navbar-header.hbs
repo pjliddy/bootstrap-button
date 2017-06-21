@@ -1,7 +1,10 @@
 {{navbar-collapse}}
 
 {{#if isAuthenticated}}
-  {{#link-to "themes" class="navbar-brand"}}Bootstrap Buttons{{/link-to}}
+  {{!-- {{#link-to "themes" class="navbar-brand"}}Bootstrap Buttons{{/link-to}} --}}
+  <a class="navbar-brand" href="" {{action "navLink" "themes"}}>Bootstrap Buttons</a>
 {{else}}
-  {{#link-to "application" class="navbar-brand"}}Bootstrap Buttons{{/link-to}}
+  {{!-- {{#link-to "application" class="navbar-brand"}}Bootstrap Buttons{{/link-to}} --}}
+  <a class="navbar-brand" href="" {{action "navLink" "application"}}>Bootstrap Buttons</a>
+
 {{/if}}

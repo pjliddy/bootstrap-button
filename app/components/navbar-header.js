@@ -6,5 +6,13 @@ export default Ember.Component.extend({
 
   auth: Ember.inject.service(),
   user: Ember.computed.alias('auth.credentials.email'),
-  isAuthenticated: Ember.computed.alias('auth.isAuthenticated')
+  isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
+
+  actions: {
+    navLink (dest) {
+      this.sendAction('navLink', dest);
+      // jQuery shortcut, should probably be component ref?
+      $('.navbar-toggle:visible').click();
+    },
+  }
 });
