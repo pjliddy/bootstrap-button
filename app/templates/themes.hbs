@@ -1,15 +1,17 @@
 <h2>Themes</h2>
 
-<ul class="list-group">
-  {{#each model as |theme|}}
-    <li class="list-group-item clearfix">
-      {{#link-to 'theme' theme}}{{theme.name}}{{/link-to}}
-      <span class="pull-right">
-        <button class="btn btn-xs btn-default" {{action "deleteTheme" theme}}><i class="glyphicon glyphicon-trash"></i></button>
-      </span>
-    </li>
-  {{/each}}
-</ul>
+<div class="col-sm-8 col-sm-offset-2">
+  <div class="list-group theme-list ">
+    {{#each model as |theme|}}
+      <div class="list-group-item clearfix">
+        {{#link-to 'theme' theme}}{{theme.name}}{{/link-to}}
+        <span class="pull-right">
+          <button class="btn btn-xs btn-default" {{action "deleteTheme" theme}}><i class="glyphicon glyphicon-trash"></i></button>
+        </span>
+      </div>
+    {{/each}}
+  </div>
 
 
-{{new-theme createNewTheme='createNewTheme' name='name'}}
+  {{new-theme createNewTheme='createNewTheme' name='name'}}
+</div>
