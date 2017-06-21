@@ -7,6 +7,9 @@ export default Ember.Component.extend({
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
 
   actions: {
+    navLink (dest) {
+      this.sendAction('navLink', dest);
+    },
     signOut () {
       this.sendAction('signOut');
     },

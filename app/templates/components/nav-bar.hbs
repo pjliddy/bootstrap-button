@@ -4,19 +4,26 @@
   <ul class="nav navbar-nav">
     {{#if isAuthenticated}}
       <li>
-        {{#link-to "themes"}}My Themes{{/link-to}}
+        {{!-- {{#link-to "themes"}}My Themes{{/link-to}} --}}
+        <a {{action "navLink" "themes"}}>My Themes</a>
       </li>
       <li>
-        {{#link-to "export" theme=model}}Export{{/link-to}}
+        {{!-- {{#link-to "export" theme=model}}Export{{/link-to}} --}}
+        <a {{action "navLink" "export" theme=model}}>Export</a>
+
       </li>
     {{/if}}
   </ul>
   <ul class="nav navbar-nav navbar-right">
     {{#if isAuthenticated}}
       <li>
-        {{#link-to "change-password"}}Change Password{{/link-to}}
+        {{!-- {{#link-to "change-password"}}Change Password{{/link-to}} --}}
+        <a {{action "navLink" "change-password"}}>Change Password</a>
+
       </li>
-      <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
+      <li>
+        <a href="#" {{action "signOut"}}>Sign Out</a>
+      </li>
     {{else}}
       <li>
         {{#link-to "sign-up"}}Sign Up{{/link-to}}
