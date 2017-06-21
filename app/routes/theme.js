@@ -24,7 +24,6 @@ export default Ember.Route.extend({
       // const vars = currentTheme.get('vars');
       this.handleMessage(e, currentTheme);
     }, false);
-
   },
 
   renderTheme (theme) {
@@ -58,6 +57,8 @@ export default Ember.Route.extend({
 
   actions: {
     updateVars (theme) {
+      const timestamp = new Date();
+      theme.set('updatedAt', timestamp);
       theme.save();
       this.renderTheme(theme);
     }

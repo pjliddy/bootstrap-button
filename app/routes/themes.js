@@ -5,7 +5,8 @@ export default Ember.Route.extend({
   defaults: Ember.inject.service('defaults'),
 
   model () {
-    return this.get('store').findAll('theme');
+    const themes = this.get('store').findAll('theme');
+    return themes;
   },
 
   actions: {
