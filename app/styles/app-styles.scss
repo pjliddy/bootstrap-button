@@ -1,32 +1,33 @@
-html, body{
+body,
+html {
   height: 100%;
   min-height: 100%;
 }
 
 .wrapper {
-  min-height: 100%;
   height: 100%;
+  min-height: 100%;
   position: fixed;
   // // width: 100%;
 }
 
 .bt {
-  min-height: 100%;
-  position:fixed;
+  // padding-bottom: 85px;
+  // padding-right: 260px;
+  border: 0;
   float: left;
   height: 100%;
+  min-height: 100%;
+  position: fixed;
   width: 100%;
-  // padding-right: 260px;
-  // padding-bottom: 85px;
-  border: none;
 }
 
 aside {
+  // padding: 0 0 85px 0;
   border-left: 1px solid $gray;
   float: right;
   height: 100%;
   overflow: auto;
-  // padding: 0 0 85px 0;
   position: fixed;
   right: 0;
   width: 260px;
@@ -34,7 +35,7 @@ aside {
 
 .layout-frame {
   // float: left;
-  border: none;
+  border: 0;
   height: 100%;
   width: 100%;
 }
@@ -61,17 +62,20 @@ aside {
     .panel-body {
       padding: 0;
     }
+
     .panel-heading {
       background: $panel-heading-outer;
       color: $white;
     }
   }
+
   .var-group-inner {
     margin-top: 0;
 
-    .panel-body{
+    .panel-body {
       padding: 10px;
     }
+
     .panel-heading {
       background: $panel-heading-inner;
       color: $brand-primary;
@@ -89,13 +93,12 @@ aside {
 }
 
 .export {
+  // overflow-y: auto;
+  bottom: 54px;
   height: 100%;
   max-height: 100%;
-  bottom: 54px;
-  padding-bottom: 30px;
-  // overflow-y: auto;
   overflow-y: auto;
-
+  padding-bottom: 30px;
 }
 
 .export-code {
@@ -109,7 +112,138 @@ aside {
 .hide-new-theme .new-theme-form {
   display: none;
 }
+//
+// NAVBAR STYLES
+//
+.navbar-custom {
+  background-color: $navbar-custom-bg;
+  border-color: transparent;
+  height: 54px;
 
-.navbar-inverse {
-  background: $navbar-inverse-bg;
+  .navbar-brand {
+    color: $brand-highlight;
+    font-size: 1.25em;
+    text-shadow: none;
+
+    &:focus {
+      color: $brand-highlight;
+    }
+
+    &.active,
+    &:active {
+      color: $brand-highlight;
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .navbar-nav > li > a {
+    text-shadow: none;
+  }
+
+  .navbar-collapse {
+    border-color: $navbar-border;
+  }
+
+  .navbar-toggle {
+    background-color: $navbar-custom-bg;
+    border: 1px solid $white;
+    color: $white;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .navbar-toggle:hover {
+    background-color: $brand-highlight;
+    border-color: $brand-highlight;
+    color: $brand-theme;
+  }
+
+  .nav li a {
+    color: $white;
+    font-family: $font-family-base;
+    font-weight: 400;
+    letter-spacing: 1px;
+    // text-transform: uppercase;
+
+    &:hover {
+      background-color: $brand-highlight;
+      color: $brand-theme;
+      outline: none;
+    }
+
+    &:focus {
+      background-color: $brand-highlight;
+      color: $brand-theme;
+      outline: none;
+    }
+  }
+
+  .navbar-nav > .active > a {
+    background-color: $navbar-custom-bg;
+    border-radius: 0;
+    color: $brand-highlight;
+    font-weight: 500;
+  }
+
+  .navbar-nav > .active > a:focus,
+  .navbar-nav > .active > a:hover {
+    // background-color: $brand-theme;
+    color: $brand-highlight;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-custom {
+    // background-color: transparent;
+    border: 0;
+    height: 54px;
+    padding-top: 1px;
+    padding-left: 1px;
+    -moz-transition: padding .2s;
+    -webkit-transition: padding .2s;
+    transition: padding .2s;
+
+    .navbar-brand {
+      font-size: 1.25em;
+      -moz-transition: all .2s;
+      -webkit-transition: all .2s;
+      transition: all .2s;
+    }
+
+    .navbar-nav > .active > a {
+      border-radius: 0;
+    }
+
+    &.affix {
+      background-color: $navbar-custom-bg;
+      padding: 10px 0;
+    }
+
+    &.affix .navbar-brand {
+      font-size: 1.25em;
+    }
+
+    .nav li a {
+      color: $white;
+      // font-weight: 400;
+      // letter-spacing: 1px;
+
+      &:hover {
+        background-color: $navbar-custom-bg;
+        color: $brand-highlight;
+        outline: none;
+      }
+
+      &:focus {
+        background-color: $navbar-custom-bg;
+        color: $white;
+        outline: none;
+      }
+    }
+
+
+  }
 }

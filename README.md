@@ -2,15 +2,14 @@
 
 This application is a tool for designers and developers to be able to create Bootstrap themes by creating custom configuratiions of the variables that LESS uses to compile the CSS for Bootstrap. It allows users to create new themes based on Bootstrap's default variables, then modify those variables and see the result in real-time. When the theme is complete, the application can generate a LESS variables file that can be included in a project's styles.
 
-![Bootstrap Button](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/screenshot.png)
-
+![Bootstrap Button](https://s3.amazonaws.com/pliddy-ga/bootstrap-button/buttons.png)
 
 ## Project Links
 
-- **Deployed Client:** https://pjliddy.github.io/bootstrap-button-client/
-- **Deployed API:** https://bootstrap-button.herokuapp.com/
-- **API GitHub Repository:** https://github.com/pjliddy/bootstrap-button-server/
-- **Client GitHub Repository** (this one): https://github.com/pjliddy/bootstrap-button-client/
+- **Deployed Client:** <https://pjliddy.github.io/bootstrap-button-client/>
+- **Deployed API:** <https://bootstrap-button.herokuapp.com/>
+- **API GitHub Repository:** <https://github.com/pjliddy/bootstrap-button-server/>
+- **Client GitHub Repository** (this one): <https://github.com/pjliddy/bootstrap-button-client/>
 
 ## Technologies Used
 
@@ -22,7 +21,7 @@ To begin this project, I tried to have a clearly-defined MVP, given the short ti
 
 To maintain manageable scope, I limited the theme configuration to buttons. Once the proof of concept is successful, it can be expanded to include additional classes of Bootstrap components. I also decided to limit the inputs to text fields, instead of trying to implement more complex UI elements like color pickers, etc.
 
-Once the application was planned and designed, I built and tested the Express server and MongoDB [(API GitHub Repository)]https://github.com/pjliddy/bootstrap-button-server/ to have a stable API to build against. I set up Ember with authentication and appropriate data models for themes and began the arduous process of building my first app in Ember. I started with a rough path through the application to create core functionality, first to view data that had been seeded in the database, then to successfully perform the remaining CRUD functions.
+Once the application was planned and designed, I built and tested the Express server and MongoDB [(API GitHub Repository)]<https://github.com/pjliddy/bootstrap-button-server/> to have a stable API to build against. I set up Ember with authentication and appropriate data models for themes and began the arduous process of building my first app in Ember. I started with a rough path through the application to create core functionality, first to view data that had been seeded in the database, then to successfully perform the remaining CRUD functions.
 
 After the data interactions were complete, I took several different approaches to solving the real-time CSS compilation challenge, before deciding to use two separate DOMs for the application and the layout, one using SASS and the other LESS. Once this last piece of functionality was complete, I went through and smoothed out the application flow within Ember and added error handling and validation where needed.
 
