@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'nav',
-  classNames: ['navbar navbar-custom'],
+  // classNames: ['navbar', 'navbar-default', 'navbar-custom', 'navbar-fixed-top'],
+  classNames: ['navbar', 'navbar-custom'],
 
   auth: Ember.inject.service(),
   user: Ember.computed.alias('auth.credentials.email'),

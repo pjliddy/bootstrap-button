@@ -115,14 +115,16 @@ aside {
 //
 // NAVBAR STYLES
 //
+
 .navbar-custom {
-  background-color: $navbar-custom-bg;
+  background: $navbar-custom-bg;
   border-color: transparent;
-  height: 54px;
+  padding-bottom: 2px;
+  padding-top: 1px;
 
   .navbar-brand {
     color: $brand-highlight;
-    font-size: 1.25em;
+    font-size: 1.5em;
     text-shadow: none;
 
     &:focus {
@@ -139,10 +141,6 @@ aside {
     }
   }
 
-  .navbar-nav > li > a {
-    text-shadow: none;
-  }
-
   .navbar-collapse {
     border-color: $navbar-border;
   }
@@ -153,12 +151,12 @@ aside {
     color: $white;
     font-size: 12px;
     text-transform: uppercase;
-  }
 
-  .navbar-toggle:hover {
-    background-color: $brand-highlight;
-    border-color: $brand-highlight;
-    color: $brand-theme;
+    &:hover {
+      background-color: $brand-highlight;
+      border-color: $brand-highlight;
+      color: $brand-theme;
+    }
   }
 
   .nav li a {
@@ -167,18 +165,22 @@ aside {
     font-weight: 400;
     letter-spacing: 1px;
     // text-transform: uppercase;
+  }
 
-    &:hover {
-      background-color: $brand-highlight;
-      color: $brand-theme;
-      outline: none;
-    }
+  .nav li a:hover {
+    background-color: $brand-highlight;
+    color: $brand-theme;
+    outline: none;
+  }
 
-    &:focus {
-      background-color: $brand-highlight;
-      color: $brand-theme;
-      outline: none;
-    }
+  .nav li a:focus {
+    background-color: $brand-highlight;
+    color: $brand-theme;
+    outline: none;
+  }
+
+  .navbar-nav > li > a {
+    text-shadow: none;
   }
 
   .navbar-nav > .active > a {
@@ -199,15 +201,15 @@ aside {
   .navbar-custom {
     // background-color: transparent;
     border: 0;
-    height: 54px;
-    padding-top: 1px;
-    padding-left: 1px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    // padding: 25px 0;
     -moz-transition: padding .2s;
     -webkit-transition: padding .2s;
     transition: padding .2s;
 
     .navbar-brand {
-      font-size: 1.25em;
+      font-size: 1.5em;
       -moz-transition: all .2s;
       -webkit-transition: all .2s;
       transition: all .2s;
@@ -217,12 +219,12 @@ aside {
       border-radius: 0;
     }
 
-    &.affix {
+    .navbar-nav > .active > a.affix {
       background-color: $navbar-custom-bg;
       padding: 10px 0;
     }
 
-    &.affix .navbar-brand {
+    .navbar-nav > .active > a.affix .navbar-brand {
       font-size: 1.25em;
     }
 
@@ -230,20 +232,18 @@ aside {
       color: $white;
       // font-weight: 400;
       // letter-spacing: 1px;
-
-      &:hover {
-        background-color: $navbar-custom-bg;
-        color: $brand-highlight;
-        outline: none;
-      }
-
-      &:focus {
-        background-color: $navbar-custom-bg;
-        color: $white;
-        outline: none;
-      }
     }
 
+    .nav li a:hover {
+      background-color: $navbar-custom-bg;
+      color: $brand-highlight;
+      outline: none;
+    }
 
+    .nav li a:focus {
+      background-color: $navbar-custom-bg;
+      color: $white;
+      outline: none;
+    }
   }
 }
