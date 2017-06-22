@@ -5,6 +5,6 @@
     "ember-cli-shims": "~0.1.1",
     "ember-qunit-notifications": "0.1.0",
     "blob-polyfill": "^1.0.20150320",
-    "underscore": "^1.8.3",
+    "underscore": "^1.8.3"
   }
 }
