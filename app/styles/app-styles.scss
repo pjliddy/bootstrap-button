@@ -8,30 +8,35 @@ html {
   background: yellow;
   height: 100%;
   min-height: 100%;
-  padding-top: 54px;
+  padding: 54px 0 0;
   box-sizing: border-box;
 }
 
+.theme-layout {
+  padding:0;
+}
+
 .bt {
+  padding: 0 0 0 0;
   // padding-bottom: 85px;
   // padding-right: 260px;
-  border: 0;
-  float: left;
-  height: 100%;
-  min-height: 100%;
-  position: fixed;
-  width: 100%;
+  // border: 0;
+  // float: left;
+  // height: 100%;
+  // min-height: 100%;
+  // position: fixed;
+  // width: 100%;
 }
 
 aside {
   // padding: 0 0 85px 0;
-  border-left: 1px solid $gray;
-  float: right;
-  height: 100%;
-  overflow: auto;
-  position: fixed;
-  right: 0;
-  width: 260px;
+  // border-left: 1px solid $gray;
+  // float: right;
+  // height: 100%;
+  // overflow: auto;
+  // position: fixed;
+  // right: 0;
+  // width: 260px;
 }
 
 .layout-frame {
