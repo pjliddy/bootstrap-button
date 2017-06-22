@@ -1,11 +1,11 @@
 {{!-- <div class="row theme-grid"> --}}
-<div class="container-fluid theme-layout">
-  <div class="bt col-md-10">
+<div class="container-fluid theme-grid">
+  <div class="theme-layout col-sm-8 col-md-9 col-lg-10">
     {{theme-layout-frame theme=model}}
   </div>
 
-  <aside class="col-md-2">
+  <div class="col-sm-4 col-md-3 col-lg-2 var-layout">
     {{var-layout theme=model vars=model.vars updateVars="updateVars"}}
-  </aside>
+  </div>
 </div>
 {{!-- </div> --}}
