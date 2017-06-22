@@ -1,9 +1,15 @@
-<div class="export">
-  <h2>Export {{model.name}}</h2>
+<div class="container export">
+  <h2>Export Theme</h2>
 
   <div class="well export-code">
+    <p>/* LESS variables for:</p>>
+    <p> *  {{model.name}}</p>
+    <p> */</p>
+    <p></p>
+
     {{#each model.vars as |var|}}
       <p>"{{var.variable}}" : "{{var.value}}"</p>
     {{/each}}
+
   </div>
 </div>

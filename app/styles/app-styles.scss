@@ -5,39 +5,58 @@ html {
 }
 
 .wrapper {
-  background: yellow;
+  // background: yellow;
   box-sizing: border-box;
   height: 100%;
   min-height: 100%;
   padding: 54px 0 0;
+  margin: 0;
 }
 
 .theme-grid {
-  background: blue;
+  // background: blue;
   height: calc(100vh - 54px);
-  min-height: 100%;
   padding: 0;
+  margin: 0;
 }
 
 .theme-layout {
   margin: 0;
   overflow: auto;
   padding: 0;
+  height: calc(100vh - 210px);
+}
+
+.layout-frame {
+  border: 0;
+  width: 100%;
+  margin: 0 0 -5px;
+  height: calc(100vh - 210px);
+  border-bottom: 1px solid $gray-light;
 }
 
 .var-layout {
   background: $gray-lighter;
   border-left: 1px solid $gray-light;
-  height: calc(100vh - 54px);
   margin: 0;
   overflow: auto;
   padding: 0;
 }
 
-.layout-frame {
-  border: 0;
-  height: calc(100vh - 54px);
-  width: 100%;
+// theme layout desktop styles
+
+@media (min-width: 768px) {
+  .layout-frame {
+    height: calc(100vh - 54px);
+  }
+
+  .theme-layout {
+    min-height: 100%;
+  }
+
+  .var-layout {
+    height: calc(100vh - 54px);
+  }
 }
 
 .panel-group .panel + .panel {
@@ -88,7 +107,6 @@ html {
 }
 
 .export {
-  // overflow-y: auto;
   bottom: 54px;
   height: 100%;
   max-height: 100%;
@@ -97,10 +115,7 @@ html {
 }
 
 .export-code {
-  // max-height: 80%;
-  // position:fixed;
-  // margin-bottom: 30px;
-  // overflow-y: auto;
+  font-family: $font-family-monospace;
   margin-bottom: 30px;
 }
 
@@ -115,11 +130,6 @@ html {
   background: $navbar-custom-bg;
   border-color: transparent;
   box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  // padding-bottom: 1px;
-  // padding-top: 1px;
 
   .navbar-header {
     box-sizing: border-box;

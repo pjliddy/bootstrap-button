@@ -48,7 +48,6 @@ export default Ember.Route.extend({
      switch (e.data.message) {
        // handle 'document-ready' message
        case 'document-ready':
-        console.log('message: layout document-ready:', data);
         this.renderTheme(data);
         break;
      }

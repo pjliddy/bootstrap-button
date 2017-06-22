@@ -6,14 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- load local bootstrap less files -->
-
-  <!-- <link rel="stylesheet/less" href="./less/bootstrap.less" type="text/less">
-  <link rel="stylesheet/less" href="./less/theme.less" type="text/less"> -->
-  <!-- <link rel="stylesheet/less" href="./styles/bt.less" type="text/less"> -->
-  <!-- <link rel="stylesheet/less" href="./styles/bt-vars.less" type="text/less">
-  <link rel="stylesheet/less" href="./styles/bt-styles.less" type="text/less"> -->
-  <!-- <link rel="stylesheet/css" href="./styles/style.css" type="text/css"> -->
+  <!-- load local bootstrap less file -->
   <link rel="stylesheet/less" href="bt.less" type="text/less">
 
   <title>Bootstrap Buttons</title>
@@ -22,12 +15,12 @@
 <body>
   <div class="container layout-content bt">
     <h3>Default Button</h3>
-    <div class="btn-toolbar">
+    <div class="button-toolbar">
       <button class="btn btn-default">Default Button</button>
     </div>
 
     <h3>Button Sizes</h3>
-    <div class="btn-toolbar">
+    <div class="button-toolbar">
       <button class="btn btn-xs btn-default">Xtra Small Button</button>
       <button class="btn btn-sm btn-default">Small Button</button>
       <button class="btn btn-default">Normal Button</button>
@@ -35,7 +28,7 @@
     </div>
 
     <h3>Button Classes</h3>
-    <div class="btn-toolbar">
+    <div class="button-toolbar">
       <button class="btn btn-primary">Primary Button</button>
       <button class="btn btn-info">Info Button</button>
       <button class="btn btn-success">Success Button</button>
@@ -44,11 +37,11 @@
     </div>
 
     <h3>Links</h3>
-    <div class="btn-toolbar">
+    <div class="button-toolbar">
       <button class="btn btn-link">Link</button>
       <button class="btn btn-link btn-link-hover">Link (Hover)</button>
-      <button class="btn btn-link btn-link-active">Link (Active)</button>
-      <button class="btn btn-link" disabled>Link (Disabled)</button>
+      <button class="btn btn-link btn-link-active active">Link (Active)</button>
+      <button class="btn btn-link disabled">Link (Disabled)</button>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -78,8 +71,8 @@
       const message = e.data.message;
       const vars = e.data.vars;
 
-      console.log('layout message received:', message);
-      console.log('vars:', vars);
+      // console.log('layout message received:', message);
+      // console.log('vars:', vars);
 
       if (e.origin === '*') {
         return;
@@ -87,43 +80,20 @@
         switch (e.data.message) {
           case 'updateVars':
             updateVars(vars);
-            // testRender(vars);
             break;
         }
       }
     };
 
     function updateVars(vars) {
-
-      // less.modifyVars(
-      //   {
-      //   '@buttonFace': '#5B83AD',
-      //   '@buttonText': '#D9EEF2'
-      //   }
-      // );
-
       less.modifyVars(vars)
         .then(less.refreshStyles());
-
+      // less.modifyVars(
+      //   {
+      //   '@buttonFace': '#5B83AD'
+      //   }
+      // );
     };
-
-    function testRender (vars) {
-      // $.ajax({url: "./styles/bt.less", success: function(result){
-      //   console.log (`less.render()`);
-      //
-      //   less.render(result, { filename: "./styles/style.css" })
-      //     .then(result => {
-      //       $(document.body).prepend($(`<style type="text/css">${result.css}</style>`));
-      //
-      //       // console.log(result.css)
-      //     });
-      // }});
-
-      less.modifyVars(vars)
-        // .then(less.refreshStyles());
-    }
   </script>
-
-
 </body>
 </html>

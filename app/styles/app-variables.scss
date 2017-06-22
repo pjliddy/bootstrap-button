@@ -1,11 +1,18 @@
-$brand-theme: #002743;
-$navbar-border-radius: 0;
-$navbar-margin-bottom: 0;
-$navbar-custom-bg: $brand-theme;
-$panel-border-radius: 0;
-$panel-heading-outer: #3f6a7f;
-$panel-heading-inner: #8fafbf;
-$white: #fff;
+// color variables
 $brand-highlight: #fed136;
-$navbar-border: rgba(255, 255, 255, .98);
+$brand-theme: #002743;
+$white: #fff;
+
+// font family variables
 $font-family-sans-serif: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// navbar variables
+$navbar-border-radius: 0;
+$navbar-border: rgba(255, 255, 255, .98);
+$navbar-custom-bg: $brand-theme;
+$navbar-margin-bottom: 0;
+
+// panel (accordion) variables
+$panel-border-radius: 0;
+$panel-heading-inner: #8fafbf;
+$panel-heading-outer: #3f6a7f;
