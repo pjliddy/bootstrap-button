@@ -72,16 +72,24 @@ html {
 
 .config-vars {
   margin-bottom: 0;
-
-  .form-group:last-child {
-    margin-bottom: 10px;
+  .panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border: 0;
   }
 
   .panel-group {
     margin: 0;
   }
 
+  .panel {
+    border: 0;
+  }
+
+  .panel-body {
+    border: 0;
+  }
+
   .panel-heading {
+    border-bottom: 1px solid $white;
     cursor: pointer;
   }
 
@@ -115,6 +123,10 @@ html {
     .panel-title {
       color: lighten($brand-theme, 15%);
     }
+  }
+
+  .form-group:last-child {
+    margin-bottom: 10px;
   }
 }
 
