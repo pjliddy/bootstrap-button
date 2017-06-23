@@ -1,6 +1,5 @@
 <div class="container">
   <h2>Your Themes</h2>
-
   {{!-- <div class="col-sm-8 col-sm-offset-2"> --}}
     <div class="list-group theme-list ">
       {{#each model as |theme|}}
@@ -9,6 +8,10 @@
           <span class="pull-right">
           <button class="btn btn-xs btn-default" {{action "deleteTheme" theme}}><i class="glyphicon glyphicon-trash"></i></button>
         </span>
+        </div>
+      {{else}}
+        <div class="list-group-item">
+          <p>Welcome to Bootstrap Buttons. Click New Theme to create your first custom theme.</p>
         </div>
       {{/each}}
     </div>

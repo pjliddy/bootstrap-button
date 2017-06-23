@@ -26,7 +26,7 @@ html {
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
   padding: 0;
-  box-sizing: border;
+  // box-sizing: border-box;
 }
 
 .layout-frame {
@@ -35,7 +35,7 @@ html {
   height: calc(100vh - 210px);
   margin: 0 0 -5px;
   width: 100%;
-  box-sizing: border;
+  // box-sizing: border-box;
 }
 
 .var-layout {
@@ -44,7 +44,7 @@ html {
   margin: 0;
   overflow: auto;
   padding: 0;
-  box-sizing: border;
+  // box-sizing: border-box;
 }
 //
 // Theme Layout Desktop Styles
@@ -239,21 +239,22 @@ html {
     color: $brand-highlight;
   }
 }
+
 @media (min-width: 768px) {
   .navbar-custom {
     border: 0;
-    -moz-transition: padding 0.2s;
-    -webkit-transition: padding 0.2s;
-    transition: padding 0.2s;
+    -moz-transition: padding .2s;
+    -webkit-transition: padding .2s;
+    transition: padding .2s;
 
     .navbar-header {
       height: 55px;
     }
 
     .navbar-brand {
-      -moz-transition: all 0.2s;
-      -webkit-transition: all 0.2s;
-      transition: all 0.2s;
+      -moz-transition: all .2s;
+      -webkit-transition: all .2s;
+      transition: all .2s;
     }
 
     .navbar-nav > .active > a {
@@ -375,4 +376,16 @@ html {
       margin-bottom: .5em;
     }
   }
+}
+
+//
+// Theme List Styles
+//
+.list-group {
+
+}
+
+.list-group-item {
+  // line-height: 1.5em;
+  // padding: 10px;
 }
