@@ -10,12 +10,12 @@ html {
   height: 100%;
   margin: 0;
   min-height: 100%;
-  padding: 54px 0 0;
+  padding: $navbar-custom-height 0 0;
 }
 
 .theme-grid {
   // background: blue;
-  height: calc(100vh - 54px);
+  height: calc(100vh - $navbar-custom-height);
   margin: 0;
   padding: 0;
 }
@@ -46,14 +46,12 @@ html {
   padding: 0;
   box-sizing: border;
 }
-
 //
 // Theme Layout Desktop Styles
 //
-
 @media (min-width: 768px) {
   .layout-frame {
-    height: calc(100vh - 54px);
+    height: calc(100vh - $navbar-custom-height);
   }
 
   .theme-layout {
@@ -61,10 +59,9 @@ html {
   }
 
   .var-layout {
-    height: calc(100vh - 54px);
+    height: calc(100vh - $navbar-custom-height);
   }
 }
-
 //
 // Config Vars Accordion Styles
 //
@@ -75,6 +72,7 @@ html {
 
 .config-vars {
   margin-bottom: 0;
+
   .panel-default > .panel-heading + .panel-collapse > .panel-body {
     border: 0;
   }
@@ -139,7 +137,7 @@ html {
 }
 
 .export {
-  bottom: 54px;
+  bottom: $navbar-custom-height;
   height: 100%;
   max-height: 100%;
   overflow-y: auto;
@@ -154,7 +152,6 @@ html {
 .hide-new-theme .new-theme-form {
   display: none;
 }
-
 //
 // Navbar Styles
 //
@@ -166,7 +163,7 @@ html {
 
   .navbar-header {
     box-sizing: border-box;
-    height: 54px;
+    height: $navbar-custom-height;
   }
 
   .navbar-brand {
@@ -190,7 +187,6 @@ html {
   .navbar-collapse {
     border-color: $navbar-border;
     // border-color: transparent;
-
   }
 
   .navbar-toggle {
@@ -243,22 +239,21 @@ html {
     color: $brand-highlight;
   }
 }
-
 @media (min-width: 768px) {
   .navbar-custom {
     border: 0;
-    -moz-transition: padding .2s;
-    -webkit-transition: padding .2s;
-    transition: padding .2s;
+    -moz-transition: padding 0.2s;
+    -webkit-transition: padding 0.2s;
+    transition: padding 0.2s;
 
     .navbar-header {
       height: 55px;
     }
 
     .navbar-brand {
-      -moz-transition: all .2s;
-      -webkit-transition: all .2s;
-      transition: all .2s;
+      -moz-transition: all 0.2s;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
     }
 
     .navbar-nav > .active > a {
@@ -299,8 +294,85 @@ html {
 .button-toolbar {
   text-align: center;
 
-  button:not(:last-child),
-  a:not(:last-child) {
+  a:not(:last-child),
+  button:not(:last-child) {
     margin-right: 5px;
+  }
+}
+
+//
+//  Index Screen Styles
+//
+
+.jumbotron {
+  background: url('images/hero.jpg') center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 0 !important;
+  color: $white;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 5%;
+  position: fixed;
+  text-align: center;
+  top: $navbar-custom-height;
+  width: 100%;
+
+  h2 {
+    color: $brand-highlight;
+    font-size: 4em;
+    font-weight: 300;
+  }
+
+  h1 {
+    font-size: 3em;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: .5em;
+    margin-top: 0;
+    // text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    h2 {
+      font-size: 6em;
+    }
+
+    h1 {
+      font-size: 4em;
+    }
+
+    h3 {
+      font-size: 3em;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .jumbotron {
+    h2 {
+      font-size: 6.5em;
+    }
+
+    h1 {
+      font-size: 4.5em;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-size: 3em;
+      margin-bottom: .5em;
+    }
   }
 }
