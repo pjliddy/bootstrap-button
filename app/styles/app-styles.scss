@@ -81,6 +81,10 @@ html {
     margin: 0;
   }
 
+  .panel-heading {
+    cursor: pointer;
+  }
+
   .var-group-outer {
     margin-top: 0;
 
@@ -90,6 +94,9 @@ html {
 
     .panel-heading {
       background: $panel-heading-outer;
+    }
+
+    .panel-title {
       color: $white;
     }
   }
@@ -103,7 +110,10 @@ html {
 
     .panel-heading {
       background: $panel-heading-inner;
-      color: $brand-primary;
+    }
+
+    .panel-title {
+      color: lighten($brand-theme, 15%);
     }
   }
 }
