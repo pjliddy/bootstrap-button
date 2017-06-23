@@ -21,9 +21,9 @@ html {
 }
 
 .theme-layout {
-  height: calc(100vh - 210px);
-  margin: 0;
   -webkit-overflow-scrolling: touch;
+  height: calc(100vh - #{$config-var-responsive-height});
+  margin: 0;
   overflow-y: scroll;
   padding: 0;
   // box-sizing: border-box;
@@ -32,7 +32,7 @@ html {
 .layout-frame {
   border-bottom: 1px solid $gray-light;
   border: 0;
-  height: calc(100vh - 210px);
+  height: calc(100vh - #{$config-var-responsive-height});
   margin: 0 0 -5px;
   width: 100%;
   // box-sizing: border-box;
@@ -51,7 +51,7 @@ html {
 //
 @media (min-width: 768px) {
   .layout-frame {
-    height: calc(100vh - $navbar-custom-height);
+    height: calc(100vh - #{$navbar-custom-height});
   }
 
   .theme-layout {
@@ -59,7 +59,7 @@ html {
   }
 
   .var-layout {
-    height: calc(100vh - $navbar-custom-height);
+    height: calc(100vh - #{$navbar-custom-height});
   }
 }
 //
@@ -381,11 +381,18 @@ html {
 //
 // Theme List Styles
 //
-.list-group {
-
-}
 
 .list-group-item {
-  // line-height: 1.5em;
-  // padding: 10px;
+  line-height: 26px;
+  padding: 10px;
+
+  .theme-name {
+    // margin-left: 10px;
+  }
+
+  .btn {
+    // border-top-left-radius: 0;
+    // border-bottom-left-radius: 0;
+    // margin: -1px;
+  }
 }

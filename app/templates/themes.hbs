@@ -4,14 +4,14 @@
     <div class="list-group theme-list ">
       {{#each model as |theme|}}
         <div class="list-group-item clearfix">
-          {{#link-to 'theme' theme}}{{theme.name}}{{/link-to}}
+          <span class="theme-name">{{#link-to 'theme' theme}}{{theme.name}}{{/link-to}}</span>
           <span class="pull-right">
-          <button class="btn btn-xs btn-default" {{action "deleteTheme" theme}}><i class="glyphicon glyphicon-trash"></i></button>
-        </span>
+            <button class="btn btn-xs btn-default" {{action "deleteTheme" theme}}><i class="glyphicon glyphicon-trash"></i></button>
+          </span>
         </div>
       {{else}}
-        <div class="list-group-item">
-          <p>Welcome to Bootstrap Buttons. Click New Theme to create your first custom theme.</p>
+        <div class="list-group-item clearfix">
+          <span class="theme-name">Welcome to Bootstrap Buttons. Click "New Theme" to create your first custom theme.</span>
         </div>
       {{/each}}
     </div>
