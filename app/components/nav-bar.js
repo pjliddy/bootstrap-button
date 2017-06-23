@@ -13,12 +13,12 @@ export default Ember.Component.extend({
     navLink (dest) {
       this.sendAction('navLink', dest);
       // jQuery shortcut, should probably be component ref?
-      $('.navbar-toggle:visible').click();
+      Ember.$('.navbar-toggle:visible').click();
     },
     signOut () {
       this.sendAction('signOut');
       // jQuery shortcut, should probably be component ref?
-      $('.navbar-toggle:visible').click();
+      Ember.$('.navbar-toggle:visible').click();
     },
   }
 });
