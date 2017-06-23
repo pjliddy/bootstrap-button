@@ -385,14 +385,8 @@ html {
 .list-group-item {
   line-height: 26px;
   padding: 10px;
+}
 
-  .theme-name {
-    // margin-left: 10px;
-  }
-
-  .btn {
-    // border-top-left-radius: 0;
-    // border-bottom-left-radius: 0;
-    // margin: -1px;
-  }
+.btn {
+  background-image: none;
 }
