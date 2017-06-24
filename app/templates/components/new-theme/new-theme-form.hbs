@@ -5,17 +5,19 @@
     <div class="form-group">
       <label for="new-theme" class="sr-only">Theme Name</label>
       <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span> {{input type="text"
+        <span class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span>
+        {{input type="text"
              class="form-control"
              id="name"
              placeholder="New Theme Name"
-             value=name}}
+             value=name
+             insert-newline="submit"}}
       </div>
       <p class="help-block">Please enter a theme title.</p>
     </div>
 
     <div class="button-toolbar">
-      <button type="submit" class="btn btn-default" {{action "reset"}}><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+      <button type="reset" class="btn btn-default" {{action "reset"}}><span class="glyphicon glyphicon-remove"></span> Cancel</button>
       <button type="submit" class="btn btn-primary" {{action "submit"}}><span class="glyphicon glyphicon-save"></span> Create Theme</button>
     </div>
 
