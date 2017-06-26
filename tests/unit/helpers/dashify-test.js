@@ -1,5 +1,5 @@
 
-import { dashify } from 'bootstrap-button/helpers/dashify';
+import { dashify } from 'bootstrap-buttons/helpers/dashify';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | dashify');

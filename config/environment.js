@@ -3,7 +3,7 @@
 module.exports = function (environment) {
   'use strict';
   const ENV = {
-    modulePrefix: 'bootstrap-button',
+    modulePrefix: 'bootstrap-buttons',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
@@ -54,15 +54,15 @@ module.exports = function (environment) {
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    ENV.APP.rootElement = '#bootstrap-button';
+    ENV.APP.rootElement = '#bootstrap-buttons';
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/bootstrap-button';
+    ENV.rootURL = '/bootstrap-buttons';
     // ENV.rootURL = '';
 
     ENV.locationType = 'hash';
-    ENV.apiHost = 'https://bootstrap-button.herokuapp.com';
+    ENV.apiHost = 'https://bootstrap-buttons.herokuapp.com';
   }
 
   return ENV;

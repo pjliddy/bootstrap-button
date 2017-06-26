@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ENV from 'bootstrap-button/config/environment';
+import ENV from 'bootstrap-buttons/config/environment';
 
 export default Ember.Component.extend({
   env: ENV.environment,

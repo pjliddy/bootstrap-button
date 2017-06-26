@@ -1,5 +1,5 @@
 
-import { groupBy } from 'bootstrap-button/helpers/group-by';
+import { groupBy } from 'bootstrap-buttons/helpers/group-by';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | group by');

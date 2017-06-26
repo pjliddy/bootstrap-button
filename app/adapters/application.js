@@ -1,4 +1,4 @@
-import ENV from 'bootstrap-button/config/environment';
+import ENV from 'bootstrap-buttons/config/environment';
 import ActiveModelAdapter from 'active-model-adapter';
 
 import Ember from 'ember';
