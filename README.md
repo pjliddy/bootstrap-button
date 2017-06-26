@@ -1,4 +1,4 @@
-# Bootstrap Button Client
+# Bootstrap Buttons
 
 This application is a tool for designers and developers to be able to create Bootstrap themes by creating custom configuratiions of the variables that LESS uses to compile the CSS for Bootstrap. It allows users to create new themes based on Bootstrap's default variables, then modify those variables and see the result in real-time. When the theme is complete, the application can generate a LESS variables file that can be included in a project's styles.
 
@@ -6,10 +6,10 @@ This application is a tool for designers and developers to be able to create Boo
 
 ## Project Links
 
-- **Deployed Client:** <https://pjliddy.github.io/bootstrap-button-client/>
+- **Deployed Client:** <https://pjliddy.github.io/bootstrap-button/>
 - **Deployed API:** <https://bootstrap-button.herokuapp.com/>
 - **API GitHub Repository:** <https://github.com/pjliddy/bootstrap-button-server/>
-- **Client GitHub Repository** (this one): <https://github.com/pjliddy/bootstrap-button-client/>
+- **Client GitHub Repository** (this one): <https://github.com/pjliddy/bootstrap-button/>
 
 ## Technologies Used
 

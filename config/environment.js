@@ -58,7 +58,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/bootstrap-button-client';
+    ENV.rootURL = '/bootstrap-button';
     // ENV.rootURL = '';
 
     ENV.locationType = 'hash';
