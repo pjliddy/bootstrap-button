@@ -10,7 +10,16 @@ Ember.MODEL_FACTORY_INJECTIONS = true;
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
-  Resolver
+  Resolver,
+
+  // make a GET request to the API when the client loads
+  // to wake up the heroku dynamo
+  ready: function () {
+    Ember.$.ajax({
+      url: config.apiHost,
+      method: 'GET'
+    });
+  }
 });
 
 loadInitializers(App, config.modulePrefix);
