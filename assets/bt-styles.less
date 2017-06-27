@@ -1,0 +1,41 @@
+// simulate interactive states
+
+.btn-link-hover {
+  border-color: transparent;
+  color: @link-hover-color;
+  text-decoration: @link-hover-decoration;
+  background-color: transparent;
+}
+
+
+.btn-link-active:hover,
+.btn-link-active:focus
+{
+  @include box-shadow(none);
+  background-color: transparent;
+  border-color: transparent;
+  // text-decoration: none;
+}
+
+.btn-link.disabled,
+.btn-link.disabled:visited,
+.btn-link.disabled:hover {
+  color: @btn-link-disabled-color;
+  text-decoration: none;
+}
+// layout buttons in toolbar to guarantee spacing
+
+.button-toolbar {
+  margin: 15px auto;
+
+  button,
+  a {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  button:not(:last-child),
+  a:not(:last-child) {
+    margin-right: 5px;
+  }
+}

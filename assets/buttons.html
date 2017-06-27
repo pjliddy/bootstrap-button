@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load local bootstrap less file -->
+  <link rel="stylesheet/less" href="bt.less" type="text/less" integrity="sha256-3aPBzUOM/oQnQdMva8mNtzht1wbPTlRK6vJ0Yj3Tt60= sha512-r6J7D18RXhbaybD9Ci62H2PFp5DuPiv41fjWJ+po6Ap1qzvv2Nd6clAMM0Z1ssXHYkErfbtlz2fh+er67Fp3uw==" >
+
+  <title>Bootstrap Buttons</title>
+</head>
+
+<body>
+  <div class="container layout-content bt">
+    <h3>Default Button</h3>
+    <div class="button-toolbar">
+      <button class="btn btn-default">Default Button</button>
+    </div>
+
+    <h3>Button Sizes</h3>
+    <div class="button-toolbar">
+      <button class="btn btn-xs btn-default">Xtra Small Button</button>
+      <button class="btn btn-sm btn-default">Small Button</button>
+      <button class="btn btn-default">Normal Button</button>
+      <button class="btn btn-lg btn-default">Large Button</button>
+    </div>
+
+    <h3>Button Classes</h3>
+    <div class="button-toolbar">
+      <button class="btn btn-primary">Primary Button</button>
+      <button class="btn btn-info">Info Button</button>
+      <button class="btn btn-success">Success Button</button>
+      <button class="btn btn-warning">Warning Button</button>
+      <button class="btn btn-danger">Danger Button</button>
+    </div>
+
+    <h3>Links</h3>
+    <div class="button-toolbar">
+      <button class="btn btn-link">Link</button>
+      <button class="btn btn-link btn-link-hover">Link (Hover)</button>
+      <button class="btn btn-link btn-link-active active">Link (Active)</button>
+      <button class="btn btn-link disabled">Link (Disabled)</button>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    less = {
+      env: "development"
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
+
+  <script>
+    $(function() {
+      // assemble message data object to send
+      const data = {
+        "message": "document-ready",
+      };
+
+      // set event listener for message from parent
+      window.addEventListener("message", handleMessage, false);
+
+      // send message to parent (page loaded)
+      parent.postMessage(data, '*');
+    });
+
+    function handleMessage(e) {
+      const message = e.data.message;
+      const vars = e.data.vars;
+
+      // console.log('layout message received:', message);
+      // console.log('vars:', vars);
+
+      if (e.origin === '*') {
+        return;
+      } else {
+        switch (e.data.message) {
+          case 'updateVars':
+            updateVars(vars);
+            break;
+        }
+      }
+    };
+
+    function updateVars(vars) {
+      less.modifyVars(vars)
+        .then(less.refreshStyles());
+      // less.modifyVars(
+      //   {
+      //   '@buttonFace': '#5B83AD'
+      //   }
+      // );
+    };
+  </script>
+</body>
+</html>
